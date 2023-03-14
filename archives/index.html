@@ -43,7 +43,20 @@
     lang   : 'zh-CN'
   };
 </script>
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
   <title>归档 | BlockTalk</title>
   
 
@@ -164,6 +177,26 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
+              datetime="2023-03-14T14:06:57+08:00"
+              content="2023-03-14">
+          03-14
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/03/14/hello-world/" itemprop="url">
+            <span itemprop="name">Hello World</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
               datetime="2023-01-27T08:51:24+08:00"
               content="2023-01-27">
           01-27
@@ -276,26 +309,6 @@
       <div class="post-title">
           <a class="post-title-link" href="/2022/11/18/test/" itemprop="url">
             <span itemprop="name">测试</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-11-17T10:16:23+08:00"
-              content="2022-11-17">
-          11-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/17/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
           </a>
       </div>
 
@@ -472,5 +485,14 @@
 
   
 
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
 </body>
 </html>

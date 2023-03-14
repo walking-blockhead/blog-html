@@ -28,7 +28,7 @@
 <meta property="og:description" content="唯有读书最快乐">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-18T02:47:27.000Z">
-<meta property="article:modified_time" content="2022-11-18T03:05:09.197Z">
+<meta property="article:modified_time" content="2023-03-14T06:06:57.170Z">
 <meta property="article:author" content="jason">
 <meta property="article:tag" content="书 电子数 epub mobi pdf">
 <meta name="twitter:card" content="summary">
@@ -45,7 +45,20 @@
     lang   : 'zh-CN'
   };
 </script>
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
   <title>关于 | BlockTalk
 </title>
   
@@ -342,5 +355,14 @@
 
   
 
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
 </body>
 </html>
