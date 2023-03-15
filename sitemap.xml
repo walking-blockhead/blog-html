@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.blocktalk.top/2023/03/15/2023/evil/</loc>
+    
+    <lastmod>2023-03-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.blocktalk.top/2023/03/09/2023/chuangxin_book/</loc>
     
     <lastmod>2023-03-15</lastmod>
@@ -11,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/resources/index.html</loc>
+    <loc>http://blog.blocktalk.top/tags/index.html</loc>
     
     <lastmod>2023-03-14</lastmod>
     
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/tags/index.html</loc>
+    <loc>http://blog.blocktalk.top/resources/index.html</loc>
     
     <lastmod>2023-03-14</lastmod>
     
@@ -38,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/2022/11/18/test/</loc>
+    <loc>http://blog.blocktalk.top/2022/11/18/test2/</loc>
     
     <lastmod>2023-03-14</lastmod>
     
@@ -47,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/2022/11/18/test2/</loc>
+    <loc>http://blog.blocktalk.top/2022/11/18/test/</loc>
     
     <lastmod>2023-03-14</lastmod>
     
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/2023/01/16/2023/202301/distant-savior/</loc>
+    <loc>http://blog.blocktalk.top/2023/01/05/2023/202301/figurative/</loc>
     
     <lastmod>2023-03-14</lastmod>
     
@@ -74,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/2023/01/05/2023/202301/figurative/</loc>
+    <loc>http://blog.blocktalk.top/2023/01/16/2023/202301/distant-savior/</loc>
     
     <lastmod>2023-03-14</lastmod>
     
@@ -101,15 +110,6 @@
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/about/index.html</loc>
-    
-    <lastmod>2023-03-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.blocktalk.top/categories/index.html</loc>
     
     <lastmod>2023-03-14</lastmod>
@@ -119,9 +119,9 @@
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/2023/03/03/2023/evil/</loc>
+    <loc>http://blog.blocktalk.top/about/index.html</loc>
     
-    <lastmod>2023-03-03</lastmod>
+    <lastmod>2023-03-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -144,14 +144,14 @@
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/tags/%E9%98%85%E8%AF%BB/</loc>
+    <loc>http://blog.blocktalk.top/tags/%E9%98%85%E8%AF%BB-%E6%94%B6%E8%B4%A7/</loc>
     <lastmod>2023-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.blocktalk.top/tags/%E9%98%85%E8%AF%BB-%E6%94%B6%E8%B4%A7/</loc>
+    <loc>http://blog.blocktalk.top/tags/%E9%98%85%E8%AF%BB/</loc>
     <lastmod>2023-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
