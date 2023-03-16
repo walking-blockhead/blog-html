@@ -94,6 +94,9 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+  <div style="display:none;"><img src="http://www.blocktalk.top/img/test.jpeg" alt=""></div>
+  <meta property="og:image" content="http://www.blocktalk.top/img/test.jpeg">
+
   <div class="container use-motion">
     <div class="headband"></div>
 
@@ -168,18 +171,6 @@
     
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
- <% 
-        var shareIconPath = "";
-        if (theme.shareIcon && theme.shareIcon.enable) {
-            if (page.shareIcon) {
-                shareIconPath = "http://www.blocktalk.top" + page.shareIcon;
-            } else { 
-                shareIconPath = "http://www.blocktalk.top/img/test.jpeg";
-            }
-        } 
-%>
-<div style="display:none;"><img src="<%= shareIconPath %>" alt=""></div>
-<meta property="og:image" content="<%= shareIconPath %>">
 
 <h1 class="post-title" itemprop="name headline">标签
 </h1>
