@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.blocktalk.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="好的,使用 CouchDB 状态数据库进行分页查询的方法如下:1. 在部署链码时,指定使用 CouchDB 作为状态数据库。2. 在链码中,查询数据时不需要指定分页条件,只定义查询逻辑和排序条件。例如: 123queryString :&#x3D; fmt.Sprintf(&quot;&amp;#123;\&quot;selector\&quot;:&amp;#123;\&quot;docType\&quot;:\&amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BlockTalk">
+<meta property="og:url" content="http://blog.blocktalk.top/2023/11/02/2023/%E5%A5%BD%E7%9A%84,%E4%BD%BF%E7%94%A8%20CouchDB%20%E7%8A%B6%E6%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E7%9A%84%E6%96%B9%E6%B3%95%E5%A6%82%E4%B8%8B1/index.html">
+<meta property="og:site_name" content="BlockTalk">
+<meta property="og:description" content="好的,使用 CouchDB 状态数据库进行分页查询的方法如下:1. 在部署链码时,指定使用 CouchDB 作为状态数据库。2. 在链码中,查询数据时不需要指定分页条件,只定义查询逻辑和排序条件。例如: 123queryString :&#x3D; fmt.Sprintf(&quot;&amp;#123;\&quot;selector\&quot;:&amp;#123;\&quot;docType\&quot;:\&amp;quo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-02T08:43:49.354Z">
+<meta property="article:modified_time" content="2023-11-02T08:43:49.354Z">
+<meta property="article:author" content="jason">
+<meta property="article:tag" content="书 电子数 epub mobi pdf">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://blog.blocktalk.top/2023/11/02/2023/%E5%A5%BD%E7%9A%84,%E4%BD%BF%E7%94%A8%20CouchDB%20%E7%8A%B6%E6%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E7%9A%84%E6%96%B9%E6%B3%95%E5%A6%82%E4%B8%8B1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <title> | BlockTalk</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<div style="display:none;"><img src="/img/test.jpeg" alt=""></div>
+<meta property="og:image" content="/img/test.jpeg">
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">BlockTalk</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.blocktalk.top/2023/11/02/2023/%E5%A5%BD%E7%9A%84,%E4%BD%BF%E7%94%A8%20CouchDB%20%E7%8A%B6%E6%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E7%9A%84%E6%96%B9%E6%B3%95%E5%A6%82%E4%B8%8B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jason">
+      <meta itemprop="description" content="唯有读书最快乐">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlockTalk">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-11-02 16:43:49" itemprop="dateCreated datePublished" datetime="2023-11-02T16:43:49+08:00">2023-11-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>好的,使用 CouchDB 状态数据库进行分页查询的方法如下:1. 在部署链码时,指定使用 CouchDB 作为状态数据库。2. 在链码中,查询数据时不需要指定分页条件,只定义查询逻辑和排序条件。例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">queryString := fmt.Sprintf(&quot;&#123;\&quot;selector\&quot;:&#123;\&quot;docType\&quot;:\&quot;data\&quot;&#125;, \&quot;sort\&quot;: [%v]&#125;&quot;, sortField)</span><br><span class="line"></span><br><span class="line">resultsIterator, err := ctx.GetStub().GetQueryResult(queryString)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>客户端在调用链码查询函数时,需要指定分页参数,例如页面大小 pageSize 和页面编号 pageNo。</li>
+<li><ol start="4">
+<li>链码把这些分页参数通过 Context 传递给 CouchDB。</li>
+<li><ol start="5">
+<li>CouchDB 根据这些分页参数,从排序后的查询结果集中取出指定一页的数据返回。</li>
+<li><ol start="6">
+<li>客户端得到一页数据结果后,可以通过更改 pageNo 获得不同页面的数据。使用 CouchDB 的好处是可以将分页逻辑下推到数据库,链码只需要处理查询条件,从而简化链码。并可以利用 CouchDB 的性能优势处理大数据集。缺点是需要 CouchDB 作为状态数据库,增加了部署和运维的复杂性。此外,链码也需要处理分页参数的传递。所以这种方式更适合有大数据处理需求,并能接受 CouchDB 状态数据库的情况。 （</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    <div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/10/08/2023/%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8E%E8%81%94%E7%9B%9F%E9%93%BE%E7%9A%84%E5%9F%9F%E5%90%8D%E6%BB%A5%E7%94%A8%E7%9B%91%E7%AE%A1%E6%96%B9%E6%B3%95%E5%8F%8A%E7%B3%BB%E7%BB%9F/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/12/11/2023/rfc8765/rfc8765/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">jason</p>
+  <div class="site-description" itemprop="description">唯有读书最快乐</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>

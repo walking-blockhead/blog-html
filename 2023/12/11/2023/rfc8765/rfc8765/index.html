@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.blocktalk.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="RFC 8765 DNS Push Notifications June 2020 Stream: Internet Engineering Task Force (IETF) RFC: 8765 Category: Standards Track Published: June 2020  ISSN: 2070-1721 Authors: T. Pusateri S. Cheshire Una�">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BlockTalk">
+<meta property="og:url" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/index.html">
+<meta property="og:site_name" content="BlockTalk">
+<meta property="og:description" content="RFC 8765 DNS Push Notifications June 2020 Stream: Internet Engineering Task Force (IETF) RFC: 8765 Category: Standards Track Published: June 2020  ISSN: 2070-1721 Authors: T. Pusateri S. Cheshire Una�">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.001.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.004.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.005.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.004.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="og:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png">
+<meta property="article:published_time" content="2023-12-10T17:11:38.000Z">
+<meta property="article:modified_time" content="2023-12-10T17:11:38.000Z">
+<meta property="article:author" content="jason">
+<meta property="article:tag" content="书 电子数 epub mobi pdf">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.001.png">
+
+<link rel="canonical" href="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <title> | BlockTalk</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<div style="display:none;"><img src="/img/test.jpeg" alt=""></div>
+<meta property="og:image" content="/img/test.jpeg">
+
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">BlockTalk</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jason">
+      <meta itemprop="description" content="唯有读书最快乐">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlockTalk">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-12-11 01:11:38" itemprop="dateCreated datePublished" datetime="2023-12-11T01:11:38+08:00">2023-12-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>RFC 8765 DNS Push Notifications June 2020</p>
+<p>Stream: Internet Engineering Task Force (IETF) RFC:<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.001.png"> <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc8765">8765</a></p>
+<p>Category: Standards Track</p>
+<p>Published: June 2020 </p>
+<p>ISSN: 2070-1721</p>
+<p>Authors: T. Pusateri S. Cheshire</p>
+<p><em>Una�liated Apple Inc.</em></p>
+<p><strong>RFC 8765</strong></p>
+<p><strong>DNS Push Notifications</strong></p>
+<p><a href="#_page0_x66.00_y232.00"><strong>Abstract</strong></a></p>
+<p><a name="_page0_x66.00_y232.00"></a>The Domain Name System (DNS) was designed to return matching records efficiently for queries for data that are relatively static. When those records change frequently, DNS is still efficient at returning the updated results when polled, as long as the polling rate is not too high. But, there exists no mechanism for a client to be asynchronously notified when these changes occur. This document defines a mechanism for a client to be notified of such changes to DNS records, called DNS Push Noti<a name="_page0_x66.00_y358.00"></a>fications.</p>
+<p><a href="#_page0_x66.00_y358.00"><strong>Status of This Memo</strong> </a></p>
+<p>This is an Internet Standards Track document.</p>
+<p>This document is a product of the Internet Engineering Task Force (IETF). It represents the consensus of the IETF community. It has received public review and has been approved for publication by the Internet Engineering Steering Group (IESG). Further information on Internet Standards is available in Section 2 of RFC 7841.</p>
+<p>Information about the current status of this document, any errata, and how to provide feedback on it ma<a name="_page0_x66.00_y517.00"></a>y be obtained at <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8765">https://www.rfc-editor.org/info/rfc8765.</a></p>
+<p><a href="#_page0_x66.00_y517.00"><strong>Copyright Notice</strong> </a></p>
+<p>Copyright (c) 2020 IETF Trust and the persons identified as the document authors. All rights reserved.</p>
+<p>This document is subject to BCP 78 and the IETF Trust’s Legal Provisions Relating to IETF Documents (<a target="_blank" rel="noopener" href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/license-info) in effect</a> on the date of publication of this document. Please review these documents carefully, as they describe your rights and restrictions with respect to this document. Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+<p><a href="#_page1_x66.00_y71.00"><strong>Table of Contents</strong> </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></p>
+<ol>
+<li><a name="_page1_x66.00_y71.00"></a><a href="#_page2_x66.00_y194.00">Introduction</a><ol>
+<li><a href="#_page2_x66.00_y334.00">Requirements Language</a></li>
+<li><a href="#_page2_x66.00_y424.00">Fatal Errors</a></li>
+</ol>
+</li>
+<li><a href="#_page3_x66.00_y70.00">Motivation</a></li>
+<li><a href="#_page4_x66.00_y70.00">Overview</a></li>
+<li><a href="#_page5_x66.00_y267.00">State Considerations</a></li>
+<li><a href="#_page5_x66.00_y420.00">Transport</a></li>
+<li><a href="#_page6_x66.00_y186.00">Protocol Operation</a></li>
+<li><a href="#_page6_x66.00_y565.00">Discovery</a></li>
+<li><a href="#_page9_x66.00_y254.00">DNS Push Notification SUBSCRIBE</a><ol>
+<li><a href="#_page9_x66.00_y524.00">SUBSCRIBE Request</a></li>
+<li><a href="#_page11_x66.00_y379.00">SUBSCRIBE Response</a></li>
+</ol>
+</li>
+<li><a href="#_page14_x66.00_y269.00">DNS Push Notification Updates</a><ol>
+<li><a href="#_page14_x66.00_y424.00">PUSH Message</a></li>
+</ol>
+</li>
+<li><a href="#_page18_x66.00_y363.00">DNS Push Notification UNSUBSCRIBE</a><ol>
+<li><a href="#_page18_x66.00_y504.00">UNSUBSCRIBE Message</a></li>
+</ol>
+</li>
+<li><a href="#_page19_x66.00_y592.00">DNS Push Notification RECONFIRM</a><ol>
+<li><a href="#_page20_x66.00_y379.00">RECONFIRM Message</a></li>
+</ol>
+</li>
+<li><a href="#_page22_x66.00_y70.00">DNS Stateful Operations TLV Context Summary</a></li>
+<li><a href="#_page23_x66.00_y70.00">Client-Initiated Termination</a></li>
+<li><a href="#_page23_x66.00_y500.00">Client Fallback to Polling</a></li>
+<li><a href="#_page24_x66.00_y478.00">Security Considerations</a><ol>
+<li><a href="#_page25_x66.00_y149.00">Security Services</a></li>
+<li><a href="#_page25_x66.00_y446.00">TLS Name Authentication</a></li>
+<li><a href="#_page26_x66.00_y70.00">TLS Early Data</a></li>
+<li><a href="#_page26_x66.00_y351.00">TLS Session Resumption</a></li>
+</ol>
+</li>
+<li><a href="#_page26_x66.00_y455.00">IANA Considerations</a></li>
+<li><a href="#_page27_x66.00_y227.00">References</a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></li>
+<li><a href="#_page27_x66.00_y261.00">Normative References</a></li>
+<li><a href="#_page29_x66.00_y70.00">Informative References</a></li>
+</ol>
+<p><a href="#_page30_x66.00_y422.00">Acknowledgments </a><a href="#_page31_x66.00_y70.00">Authors’ Addresses</a></p>
+<ol>
+<li><a href="#_page2_x66.00_y194.00"><strong>Introduction</strong> </a></li>
+</ol>
+<p><a name="_page2_x66.00_y194.00"></a>Domain Name System (DNS) records may be updated using DNS Update [RFC2136]. Other mechanisms such as a Discovery Proxy [<a href="#_page30_x66.00_y217.00">RFC8766] can also gener</a>ate changes to a DNS zone. This document specifies a protocol for DNS clients to subscribe to receive asynchronous notifications of changes to RRsets of interest. It is immediately relevant in the case of DNS-based Service Discovery [<a href="#_page29_x66.00_y436.00">RFC6763] but</a> is not limited to that use case; it provides a general DNS mechanism for DNS record change notifications. Familiarity with the DNS protocol and DNS packet formats is assumed <a name="_page2_x66.00_y334.00"></a>[<a href="#_page27_x66.00_y445.00">RFC1034] [</a><a href="#_page27_x66.00_y480.00">RFC1035] [</a><a href="#_page28_x66.00_y266.00">RFC6895].</a></p>
+<ol>
+<li><a href="#_page2_x66.00_y334.00"><strong>Requirements Language</strong> </a></li>
+</ol>
+<p>The key words “<strong>MUST</strong>“, “ <strong>MUST NOT</strong>“, “ <strong>REQUIRED</strong>“, “<strong>SHALL</strong>“, “<strong>SHALL NOT</strong>“, “<strong>SHOULD</strong>“, “<strong>SHOULD NOT</strong>“, “<strong>RECOMMENDED</strong>“, “<strong>NOT RECOMMENDED</strong>“, “<strong>MAY</strong>“, and “<strong>OPTIONAL</strong>“ in this document are to be interpreted as described in BCP 14 [<a href="#_page27_x66.00_y578.00">RFC2119</a>] [<a href="#_page27_x66.00_y578.00">RFC8174]</a> <a href="#_page27_x66.00_y578.00">when,</a> <a href="#_page28_x66.00_y461.00">and only when,</a> they appear in</p>
+<p>all capitals, as shown here.</p>
+<ol start="2">
+<li><a name="_page2_x66.00_y424.00"></a><a href="#_page2_x66.00_y424.00"><strong>Fatal Errors</strong> </a></li>
+</ol>
+<p>Certain invalid situations are described in this specification, such as a server sending a Push Notification subscription request to a client, or a client sending a Push Notification response to a server. These should never occur with a correctly implemented client and server, and if they do occur, then they indicate a serious implementation error. In these extreme cases, there is no reasonable expectation of a graceful recovery, and the recipient detecting the error should respond by unilaterally aborting the session without regard for data loss. Such cases are addressed by having an engineer investigate the cause of the failure and fixing the problem in the software.</p>
+<p>Where this specification says “forcibly abort”, it means sending a TCP RST to terminate the TCP connection and the TLS session running over that TCP connection. In the BSD Sockets API, this is achieved by setting the SO_LINGER option to zero before closing the socket.</p>
+<ol start="2">
+<li><a href="#_page3_x66.00_y70.00"><strong>Motivation</strong> </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></li>
+</ol>
+<p><a name="_page3_x66.00_y70.00"></a>As the domain name system continues to adapt to new uses and changes in deployment, polling has the potential to burden DNS servers at many levels throughout the network. Other network protocols have successfully deployed a publish/subscribe model following the Observer design pattern [<a href="#_page29_x66.00_y163.00">OBS]. Extensible</a> Messaging and Presence Protocol (XMPP) Publish-Subscribe  [<a href="#_page30_x66.00_y398.00">XEP0060] </a>and Atom [<a href="#_page29_x66.00_y268.00">RFC4287] are</a> examples. While DNS servers are generally highly tuned and capable of a high rate of query/response traffic, adding a publish/subscribe model for tracking changes to DNS records can deliver more timely notifications of changes with reduced CPU usage and lower network traffic.</p>
+<p>The guiding design principle of DNS Push Notifications is that clients that choose to use DNS Push Notifications, instead of repeated polling with DNS queries, will receive the same results as they could via sufficiently rapid polling, except more efficiently. This means that the rules for which records match a given DNS Push Notification subscription are the same as the already established rules used to determine which records match a given DNS query  [<a href="#_page27_x66.00_y445.00">RFC1034]</a>. F<a href="#_page27_x66.00_y445.00">or </a>example, name comparisons are done in a case-insensitive manner, and a record of type CNAME in a zone matches any DNS TYPE in a query or subscription.</p>
+<p>Multicast DNS [<a href="#_page29_x66.00_y401.00">RFC6762] </a>implementations always listen on a well-known link-local IP multicast group address, and changes are sent to that multicast group address for all group members to receive. Therefore, Multicast DNS already has asynchronous change notification capability. When DNS-based Service Discovery [<a href="#_page29_x66.00_y436.00">RFC6763] is used across</a> a wide area network using Unicast DNS (possibly facilitated via a Discovery Proxy [<a href="#_page30_x66.00_y217.00">RFC8766]</a>), <a href="#_page30_x66.00_y217.00">it would be</a> beneficial to have an equivalent capability for Unicast DNS in order to allow clients to learn about DNS record changes in a timely manner without polling.</p>
+<p>The DNS Long-Lived Queries (LLQ) mechanism [<a href="#_page30_x66.00_y168.00">RFC8764] is an existing</a> deployed solution to provide asynchronous change notifications; it was used by Apple’s Back to My Mac [RFC6281] service introduced in Mac OS X 10.5 Leopard in 2007. Back to My Mac was designed in an era when the data center operations staff asserted that it was impossible for a server to handle large numbers of TCP connections, even if those connections carried very little traffic and spent most of their time idle. Consequently, LLQ was defined as a UDP-based protocol, effectively replicating much of TCP’s connection state management logic in user space and creating its own imitation of existing TCP features like flow control, reliability, and the three-way handshake.</p>
+<p>This document builds on experience gained with the LLQ protocol, with an improved design. Instead of using UDP, this specification uses DNS Stateful Operations (DSO) [RFC8490] running over TLS over TCP, and therefore doesn’t need to reinvent existing TCP functionality. Using TCP also gives long-lived low-traffic connections better longevity through NAT gateways without depending on the gateway to support NAT Port Mapping Protocol (NAT-PMP) [RFC6886] or Port Control Protocol (PCP) [<a href="#_page29_x66.00_y520.00">RFC6887], or </a>resorting to excessive keepalive traffic.</p>
+<ol start="3">
+<li><a href="#_page4_x66.00_y70.00"><strong>Overview</strong> </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"></li>
+</ol>
+<p><a name="_page4_x66.00_y70.00"></a>A DNS Push Notification client subscribes for Push Notifications for a particular RRset by connecting to the appropriate Push Notification server for that RRset and sending DSO message (s) indicating the RRset(s) of interest. When the client loses interest in receiving further updates to these records, it unsubscribes.</p>
+<p>The DNS Push Notification server for a DNS zone is any server capable of generating the correct change notifications for a name. It may be a primary, secondary, or stealth name server [<a href="#_page30_x66.00_y70.00">RFC8499]</a>.</p>
+<p>The _dns‑push‑tls._tcp.<zone> SRV record for a zone <strong>MAY</strong> reference the same target host and port as that zone’s _dns‑update‑tls._tcp.<zone> SRV record. When the same target host and port is offered for both DNS Updates and DNS Push Notifications, a client  <strong>MAY</strong> use a single DSO session to that server for both DNS Updates and DNS Push Notification subscriptions. DNS Updates and DNS Push Notifications may be handled on different ports on the same target host, in which case they are not considered to be the “same server” for the purposes of this specification, and communications with these two ports are handled independently. Supporting DNS Updates and DNS Push Notifications on the same server is <strong>OPTIONAL</strong>. A DNS Push Notification server is not required to support DNS Update.</p>
+<p>Standard DNS Queries <strong>MAY</strong> be sent over a DNS Push Notification (i.e., DSO) session. For any zone for which the server is authoritative, it  <strong>MUST</strong> respond authoritatively for queries for names falling within that zone (e.g., the _dns‑push‑tls._tcp.<zone> SRV record) both for normal DNS queries and for DNS Push Notification subscriptions. For names for which the server is acting as a recursive resolver (e.g., when the server is the local recursive resolver) for any query for which it supports DNS Push Notification subscriptions, it  <strong>MUST</strong> also support standard queries.</p>
+<p>DNS Push Notifications impose less load on the responding server than rapid polling would, but Push Notifications do still have a cost. Therefore, DNS Push Notification clients <strong>MUST NOT</strong> recklessly create an excessive number of Push Notification subscriptions. Specifically:</p>
+<ol>
+<li>A subscription should only be active when there is a valid reason to need live data (for example, an on-screen display is currently showing the results to the user), and the subscription <strong>SHOULD</strong> be canceled as soon as the need for that data ends (for example, when the user dismisses that display). In the case of a device like a smartphone that, after some period of inactivity, goes to sleep or otherwise darkens its screen, it should cancel its subscriptions when darkening the screen (since the user cannot see any changes on the display anyway) and reinstate its subscriptions when reawakening from display sleep. </li>
+<li>A DNS Push Notification client <strong>SHOULD NOT</strong> routinely keep a DNS Push Notification subscription active 24 hours a day, 7 days a week, just to keep a list in memory up to date so that if the user does choose to bring up an on-screen display of that data, it can be displayed really fast. DNS Push Notifications are designed to be fast enough that there is no need to pre-load a “warm” list in memory just in case it might be needed later. </li>
+</ol>
+<p>Generally, as described in the DNS Stateful Operations specification [RFC8490], a client <a href="#_page28_x66.00_y594.00">must not </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1">keep a DSO session to a server open indefinitely if it has no subscriptions (or other operations) active on that session. A client should begin closing a DSO session immediately after it becomes idle, and then, if needed in the future, open a new session when required. Alternatively, a client may speculatively keep an idle DSO session open for some time, subject to the constraint that it must not keep a session open that has been idle for more than the session’s idle timeout (15 seconds by default) [<a href="#_page28_x66.00_y594.00">RFC8490].</a></p>
+<p>Note that a DSO session that has an active DNS Push Notification subscription is not considered idle, even if there is no traffic flowing for an extended period of time. In this case, the DSO inactivity timeout does not apply, because the session is not inactive, but the keepalive interval does still apply, to ensure the generation of sufficient messages to maintain state in middleboxes (such at NAT gateways or firewalls) and for the client and server to periodically verify that they still have connectivity to each other. This is described in Section <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc8490#section-6.2">6.2 of the DSO</a> specification [<a name="_page5_x66.00_y267.00"></a><a href="#_page28_x66.00_y594.00">RFC8490]</a>.</p>
+<ol start="4">
+<li><a href="#_page5_x66.00_y267.00"><strong>State Considerations</strong> </a></li>
+</ol>
+<p>Each DNS Push Notification server is capable of handling some finite number of Push Notification subscriptions. This number will vary from server to server and is based on physical machine characteristics, network capacity, and operating system resource allocation. After a client establishes a session to a DNS server, each subscription is individually accepted or rejected. Servers may employ various techniques to limit subscriptions to a manageable level. Correspondingly, the client is free to establish simultaneous sessions to alternate DNS servers that support DNS Push Notifications for the zone and distribute subscriptions at the client’s discretion. In this wa<a name="_page5_x66.00_y420.00"></a>y, both clients and servers can react to resource constraints.</p>
+<ol start="5">
+<li><a href="#_page5_x66.00_y420.00"><strong>Transport</strong> </a></li>
+</ol>
+<p>Other DNS operations like DNS Update [<a href="#_page27_x66.00_y627.00">RFC2136] <strong>MAY</strong></a> <a href="#_page27_x66.00_y627.00">use </a>either DNS over User Datagram Protocol (UDP) [<a href="#_page27_x66.00_y375.00">RFC0768] or</a> DNS over Transmission Control Protocol (TCP) [RFC0793] as the transport protocol, provided they follow the historical precedent that DNS queries must first be sent using DNS over UDP and only switch to DNS over TCP if needed [RFC1123<a href="#_page27_x66.00_y529.00">]</a>. This <a href="#_page27_x66.00_y529.00">requirement </a>to prefer UDP has subsequently been relaxed [RFC7766].</p>
+<p>In keeping with the more recent precedent, DNS Push Notification is defined only for TCP. DNS Push Notification clients <strong>MUST</strong> use DNS Stateful Operations [RFC8490] running <a href="#_page28_x66.00_y594.00">over TLS over</a> TCP [<a href="#_page28_x66.00_y412.00">RFC7858]</a>.</p>
+<p>Connection setup over TCP ensures return reachability and alleviates concerns of state overload at the server, a potential problem with connectionless protocols, which can be more vulnerable to being exploited by attackers using spoofed source addresses. All subscribers are guaranteed to be reachable by the server by virtue of the TCP three-way handshake. Flooding attacks are possible with any protocol, and a benefit of TCP is that there are already established industry best practices to guard against SYN flooding and similar attacks [SYN] [<a href="#_page30_x66.00_y301.00">RFC4953</a>].</p>
+<p>Use of TCP also allows DNS Push Notifications to take advantage of current and future developments in TCP such as Multipath TCP (MPTCP) [![ref1]<a href="#_page30_x66.00_y119.00">RFC8684]</a>, T<a href="#_page30_x66.00_y119.00">CP Fast Open</a> (TFO) [RFC7413], the TCP RACK fast loss detection algorithm [T<a href="#_page30_x66.00_y350.00">CPRACK], and so on.</a></p>
+<p>Transport Layer Security (TLS) [<a href="#_page28_x66.00_y558.00">RFC8446] is well </a>understood and is used by many application- layer protocols running over TCP. TLS is designed to prevent eavesdropping, tampering, and message forgery. TLS is <strong>REQUIRED</strong> for every connection between a client subscriber and server in this protocol specification. Additional security measures such as client authentication during TLS negotiation ma<a name="_page6_x66.00_y186.00"></a>y also be employed to increase the trust relationship between client and server.</p>
+<ol start="6">
+<li><a href="#_page6_x66.00_y186.00"><strong>Protocol Operation</strong> </a></li>
+</ol>
+<p>The DNS Push Notification protocol is a session-oriented protocol and makes use of DNS Stateful Operations (DSO) [<a href="#_page28_x66.00_y594.00">RFC8490].</a></p>
+<p>For details of the DSO message format, refer to the DNS Stateful Operations specification [<a href="#_page28_x66.00_y594.00">RFC8490]</a>. Those details are not repeated here.</p>
+<p>DNS Push Notification clients and servers  <strong>MUST</strong> support DSO. A single server can support DNS Queries, DNS Updates, and DNS Push Notifications (using DSO) on the same TCP port.</p>
+<p>A DNS Push Notification exchange begins with the client discovering the appropriate server, using the procedure described in Section<a href="#_page6_x66.00_y565.00"> 6.1, and then</a> making a TLS/TCP connection to it.</p>
+<p>After making the TLS/TCP connection to the server, a typical DNS Push Notification client will then immediately issue a DSO Keepalive operation to establish the DSO session and request a session timeout and/or keepalive interval longer than the 15-second default values, but this is not required. A DNS Push Notification client  <strong>MAY</strong> issue other requests on the session first, and only issue a DSO Keepalive operation later if it determines that to be necessary. Sending either a DSO Keepalive operation or a Push Notification subscription request over the TLS/TCP connection to the server signals the client’s support of DSO and serves to establish a DSO session.</p>
+<p>In accordance with the current set of active subscriptions, the server sends relevant asynchronous Push Notifications to the client. Note that a client  <strong>MUST</strong> be prepared to receive (and silently ignore) Push Notifications for subscriptions it has previously removed, since there is no way to prevent the situation where a Push Notification is in flight from server to client while the client’s UNSUBSCRIBE message canceling that subscription is simultaneously in flight from</p>
+<p>client to server.</p>
+<ol>
+<li><a name="_page6_x66.00_y565.00"></a><a href="#_page6_x66.00_y565.00"><strong>Discovery</strong> </a></li>
+</ol>
+<p>The first step in establishing a DNS Push Notification subscription is to discover an appropriate DNS server that supports DNS Push Notifications for the desired zone.</p>
+<p>The client begins by opening a DSO session to its normal configured DNS recursive resolver and requesting a Push Notification subscription. This connection is made to TCP port 853, the default</p>
+<p>port for DNS over TLS [<a href="#_page28_x66.00_y412.00">RFC7858]. If the</a> request for a Push Notification subscription is successful,</p>
+<p>and the recursive resolver doesn’t already have an active subscription for that name, type, and class, then the recursive resolver will make a corresponding Push Notification subscription on the client’s behalf. Results received are relayed to the client. This is closely analogous to how a client sends a normal DNS query to its configured DNS recursive resolver, which, if it doesn’t already have appropriate answer(s) in its cache, issues an upstream query to satisfy the request.<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"></p>
+<p>In many contexts, the recursive resolver will be able to handle Push Notifications for all names that the client may need to follow. Use of VPN tunnels and Private DNS [RFC8499] can create some additional complexity in the client software here; the techniques to handle VPN tunnels and Private DNS for DNS Push Notifications are the same as those already used to handle this for normal DNS queries.</p>
+<p>If the recursive resolver does not support DNS over TLS, or supports DNS over TLS but is not listening on TCP port 853, or supports DNS over TLS on TCP port 853 but does not support DSO on that port, then the DSO session establishment will fail [RFC8490].</p>
+<p>If the recursive resolver does support DSO on TCP port 853 but does not support Push Notification subscriptions, then when the client attempts to create a subscription, the server will return the DSO error code DSOTYPENI (11).</p>
+<p>In some cases, the recursive resolver may support DSO and Push Notification subscriptions but may not be able to subscribe for Push Notifications for a particular name. In this case, the recursive resolver should return SERVFAIL to the client. This includes being unable to establish a connection to the zone’s DNS Push Notification server or establishing a connection but receiving a non-success response code. In some cases, where the client has a pre-established trust relationship with the owner of the zone (that is not handled via the usual mechanisms for VPN software), the client may handle these failures by contacting the zone’s DNS Push Notification server directly.</p>
+<p>In any of the cases described above where the client fails to establish a DNS Push Notification subscription via its configured recursive resolver, the client should proceed to discover the appropriate server for direct communication. The client  <strong>MUST</strong> also determine on which TCP port the server is listening for connections, which need not be, and often is not, TCP port 53 (traditionally used for conventional DNS) or TCP port 853 (traditionally used for DNS over TLS).</p>
+<p>The discovery algorithm described here is an iterative algorithm, which starts with the full name of the record to which the client wishes to subscribe. Successive SOA queries are then issued, trimming one label each time, until the closest enclosing authoritative server is discovered. There is also an optimization to enable the client to take a “short cut” directly to the SOA record of the closest enclosing authoritative server in many cases.</p>
+<ol>
+<li><p>The client begins the discovery by sending a DNS query to its local resolver, with record type SOA [<a href="#_page27_x66.00_y480.00">RFC1035]</a> for the record name to which it wishes to subscribe. As an example, suppose the client wishes to subscribe to PTR records with the name _ipp._tcp.headoffice.example.com (to discover Internet Printing Protocol (IPP) printers [<a href="#_page29_x66.00_y604.00">RFC8010]</a> [<a href="#_page29_x66.00_y653.00">RFC8011] </a>being advertised in the head office of Example Company). The client begins by sending an SOA query for _ipp._tcp.headoffice.example.com to the local</p>
+<p>recursive resolver. The goal is to determine the server that is authoritative for the name <img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"></p>
+</li>
+</ol>
+<p>_ipp._tcp.headoffice.example.com. The closest enclosing DNS zone containing the name _ipp._tcp.headoffice.example.com could be example.com, or headoffice.example.com, or _tcp.headoffice.example.com, or even _ipp._tcp.headoffice.example.com. The client does not know in advance where the closest enclosing zone cut occurs, which is why it uses the iterative procedure described here to discover this information. </p>
+<ol start="2">
+<li><p>If the requested SOA record exists, it will be returned in the Answer Section with a NOERROR response code, and the client has succeeded in discovering the information it needs.</p>
+<p>(This language is not placing any new requirements on DNS recursive resolvers. This text merely describes the existing operation of the DNS protocol [RFC1034] [RFC1035].)</p>
+</li>
+<li><p>If the requested SOA record does not exist, the client will get back a NOERROR/NODATA response or an NXDOMAIN/Name Error response. In either case, the local resolver would normally include the SOA record for the closest enclosing zone of the requested name in the Authority Section. If the SOA record is received in the Authority Section, then the client has succeeded in discovering the information it needs.</p>
+<p>(This language is not placing any new requirements on DNS recursive resolvers. This text merely describes the existing operation of the DNS protocol regarding negative responses [<a href="#_page29_x66.00_y198.00">RFC2308]</a>.)</p>
+</li>
+<li><p>If the client receives a response containing no SOA record, then it proceeds with the iterative approach. The client strips the leading label from the current query name, and if the resulting name has at least two labels in it, then the client sends an SOA query for that new name and processing continues at step 2 above, repeating the iterative search until either an SOA is received or the query name consists of a single label, i.e., a Top-Level Domain (TLD). In the case of a single-label name (TLD), this is a network configuration error, which should not happen, and the client gives up. The client may retry the operation at a later time of the client’s choosing, such as after a change in network attachment. </p>
+</li>
+<li><p>Once the SOA is known (by virtue of being seen either in the Answer Section or in the Authority Section), the client sends a DNS query with type SRV [RFC2782<a href="#_page28_x66.00_y106.00">] </a>for the <a href="#_page28_x66.00_y106.00">record </a>name _dns‑push‑tls._tcp.<zone>, where <zone> is the owner name of the discovered SOA record. </p>
+</li>
+<li><p>If the zone in question is set up to offer DNS Push Notifications, then this SRV record <strong>MUST</strong> exist. (If this SRV record does not exist, then the zone is not correctly configured for DNS Push Notifications as specified in this document.) The SRV target contains the name of the server providing DNS Push Notifications for the zone. The port number on which to contact the server is in the SRV record port field. The address(es) of the target host  <strong>MAY</strong> be included in the Additional Section, however, the address records  <strong>SHOULD</strong> be authenticated before use as described in <a href="#_page25_x66.00_y446.00">Section 7.2 and </a>in the specification for using DNS-Based Authentication of Named Entities (DANE) TLSA Records with SRV Records [<a href="#_page28_x66.00_y314.00">RFC7673]</a>, <a href="#_page28_x66.00_y314.00">if applicable.</a> </p>
+</li>
+<li><p>More than one SR<a name="_page8_x86.00_y637.00"></a>V record may be returned. In this case, the priority and weight values in the returned SRV records are used to determine the order in which to contact the servers for subscription requests. As described in the SRV specification [RFC2782<a href="#_page28_x66.00_y106.00">]</a>, the <a href="#_page28_x66.00_y106.00">server with the </a>lowest priority is first contacted. If more than one server has the same priority, the </p>
+<p>weight indicates the weighted probability that the client should contact that server. Higher weights have higher probabilities of being selected. If a server is not willing to accept a subscription request, or is not reachable within a reasonable time, as determined by the client, then a subsequent server is to be contacted. <img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"></p>
+</li>
+</ol>
+<p>Each time a client makes a new DNS Push Notification subscription, it  <strong>SHOULD</strong> repeat the discovery process in order to determine the preferred DNS server for that subscription at that time. If a client already has a DSO session with that DNS server, the client  <strong>SHOULD</strong> reuse that existing DSO session for the new subscription; otherwise, a new DSO session is established. The client <strong>MUST</strong> respect the DNS TTL values on records it receives while performing the discovery process and store them in its local cache with this lifetime (as it will generally do anyway for all DNS queries it performs). This means that, as long as the DNS TTL values on the authoritative records are set to reasonable values, repeated application of the discovery process can be completed pr<a name="_page9_x66.00_y254.00"></a>actically instantaneously by the client, using only locally stored cached data.</p>
+<ol start="2">
+<li><a href="#_page9_x66.00_y254.00"><strong>DNS Push Notification SUBSCRIBE</strong> </a></li>
+</ol>
+<p>After connecting, and requesting a longer idle timeout and/or keepalive interval if necessary, a DNS Push Notification client then indicates its desire to receive DNS Push Notifications for a given domain name by sending a SUBSCRIBE request to the server. A SUBSCRIBE request is encoded in a DSO message [<a href="#_page28_x66.00_y594.00">RFC8490]. This speci</a>fication defines a DSO Primary TLV for DNS Push Notification SUBSCRIBE Requests (DSO Type Code 0x0040).</p>
+<p>DSO messages with the SUBSCRIBE TLV as the Primary TLV are permitted in TLS early data, provided that the precautions described in Section <a href="#_page26_x66.00_y70.00">7.3 are followed.</a></p>
+<p>The entity that initiates a SUBSCRIBE request is by definition the client. A server  <strong>MUST NOT</strong> send a SUBSCRIBE request over an existing session from a client. If a server does send a SUBSCRIBE request over a DSO session initiated by a client, this is a fatal error and the client  <strong>MUST</strong> forcibly abort the connection immediately.</p>
+<p>Each SUBSCRIBE request generates exactly one SUBSCRIBE response from the server. The entity that initiates a SUBSCRIBE response is by definition the server. A client <strong>MUST NOT</strong> send a SUBSCRIBE response. If a client does send a SUBSCRIBE response, this is a fatal error and the server <a name="_page9_x66.00_y524.00"></a><strong>MUST</strong> forcibly abort the connection immediately.</p>
+<ol>
+<li><a href="#_page9_x66.00_y524.00"><strong>SUBSCRIBE Request</strong> </a></li>
+</ol>
+<p>A SUBSCRIBE request begins with the standard DSO 12-byte header [RFC8490<a href="#_page28_x66.00_y594.00">]</a>, followed<a href="#_page28_x66.00_y594.00"> by the </a>SUBSCRIBE Primary TLV. A SUBSCRIBE request is illustrated in Figure<a href="#_page10_x66.00_y182.00"> 1.</a></p>
+<p>The MESSAGE ID field <strong>MUST</strong> be set to a unique value that the client is not using for any other active operation on this DSO session. For the purposes here, a MESSAGE ID is in use on this session if either the client has used it in a request for which it has not yet received a response, or if the client has used it for a subscription that it has not yet canceled using UNSUBSCRIBE. In the SUBSCRIBE response, the server <strong>MUST</strong> echo back the MESSAGE ID value unchanged.</p>
+<p>The other header fields <strong>MUST</strong> be set as described in the  DSO<a href="#_page28_x66.00_y594.00"> specification [RFC8490]. The DNS </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2">OPCODE field contains the OPCODE value for DNS Stateful Operations (6). The four count fields must be zero, and the corresponding four sections must be empty (i.e., absent).</p>
+<p>The DSO-TYPE is SUBSCRIBE (0x0040).</p>
+<p>The DSO-LENGTH is the length of the DSO-DATA that follows, which specifies the name, type, and class of the record(s) being sought.</p>
+<p><a name="_page10_x66.00_y182.00"></a>                                   1  1  1  1  1  1</p>
+<p><code>     </code>0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  \</p>
+<p><code>   </code>|                  MESSAGE ID                   |   \</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|QR| OPCODE(6) |         Z          |   RCODE   |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             QDCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+     &gt; HEADER</p>
+<p><code>   </code>|             ANCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             NSCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             ARCOUNT (MUST BE ZERO)            |   /</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  /</p>
+<p><code>   </code>|         DSO-TYPE = SUBSCRIBE (0x0040)         |    +–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+</p>
+<p><code>   </code>|   DSO-LENGTH (number of octets in DSO-DATA)   |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  \</p>
+<p><code>   </code>\                     NAME                      \   \</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|                     TYPE                      |     &gt; DSO-DATA    +–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|                     CLASS                     |   /</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  /</p>
+<p><a href="#_page10_x66.00_y182.00">*Figure 1:</a> <em><a href="#_page10_x66.00_y182.00">SUBSCRIBE Request* </a></em></p>
+<p>The DSO-DATA for a SUBSCRIBE request <strong>MUST</strong> contain exactly one NAME, TYPE, and CLASS. Since SUBSCRIBE requests are sent over TCP, multiple SUBSCRIBE DSO request messages can be concatenated in a single TCP stream and packed efficiently into TCP segments.</p>
+<p>If accepted, the subscription will stay in effect until the client cancels the subscription using UNSUBSCRIBE or until the DSO session between the client and the server is closed.</p>
+<p>SUBSCRIBE requests on a given session <strong>MUST</strong> be unique. A client  <strong>MUST NOT</strong> send a SUBSCRIBE message that duplicates the name, type and class of an existing active subscription on that DSO session. For the purpose of this matching, the established DNS case insensitivity for US-ASCII letters [<a href="#_page27_x66.00_y340.00">RFC0020] </a>applies (e.g., “example.com” and “Example.com” are the same). If a server receives such a duplicate SUBSCRIBE message, this is a fatal error and the server  <strong>MUST</strong> forcibly abort the connection immediately.</p>
+<p>DNS wildcarding is not supported. That is, an asterisk character (“*“) in a SUBSCRIBE message matches only a literal asterisk character (“*“) in a name and nothing else. Similarly, a CNAME in a SUBSCRIBE message matches only a CNAME record with that name in the zone and no other records with that name.<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></p>
+<p>A client may SUBSCRIBE to records that are unknown to the server at the time of the request (providing that the name falls within one of the zone(s) the server is responsible for), and this is not an error. The server <strong>MUST NOT</strong> return NXDOMAIN in this case. The server  <strong>MUST</strong> accept these requests and send Push Notifications if and when matching records are found in the future.</p>
+<p>If neither TYPE nor CLASS are ANY (255), then this is a specific subscription to changes for the given name, type, and class. If one or both of TYPE or CLASS are ANY (255), then this subscription matches all types and/or all classes as appropriate.</p>
+<p>NOTE: A little-known quirk of DNS is that in DNS QUERY requests, QTYPE and QCLASS 255 mean “ANY”, not “ALL”. They indicate that the server should respond with ANY matching records of its choosing, not necessarily ALL matching records. This can lead to some surprising and unexpected results, where a query returns some valid answers, but not all of them, and makes QTYPE = 255 (ANY) queries less useful than people sometimes imagine.</p>
+<p>When used in conjunction with SUBSCRIBE, TYPE 255 and CLASS 255 should be interpreted to mean “ALL”, not “ANY”. After accepting a subscription where one or both of TYPE or CLASS are 255, the server <strong>MUST</strong> send Push Notification Updates for ALL record changes that match the subscription, not just some of them.</p>
+<ol start="2">
+<li><a name="_page11_x66.00_y379.00"></a><a href="#_page11_x66.00_y379.00"><strong>SUBSCRIBE Response</strong> </a></li>
+</ol>
+<p>A SUBSCRIBE response begins with the standard DSO 12-byte header [RFC8490<a href="#_page28_x66.00_y594.00">]</a>. The QR<a href="#_page28_x66.00_y594.00"> bit in the </a>header is set indicating it is a response. The header  <strong>MAY</strong> be followed by one or more optional Additional TLVs such as a Retry Delay Additional TLV. A SUBSCRIBE response is illustrated in </p>
+<p><a href="#_page12_x66.00_y70.00">Figure 2.</a></p>
+<p>The MESSAGE ID field <strong>MUST</strong> echo the value given in the MESSAGE ID field of the SUBSCRIBE request. This is how the client knows which request is being responded to.</p>
+<p>The other header fields <strong>MUST</strong> be set as described in the  DSO<a href="#_page28_x66.00_y594.00"> specification [RFC8490]. The DNS </a>OPCODE field contains the OPCODE value for DNS Stateful Operations (6). The four count fields must be zero, and the corresponding four sections must be empty (i.e., absent).</p>
+<p>A SUBSCRIBE response message <strong>MUST NOT</strong> include a SUBSCRIBE TLV. If a client receives a SUBSCRIBE response message containing a SUBSCRIBE TLV, then the response message is processed but the SUBSCRIBE TLV <strong>MUST</strong> be silently ignored.</p>
+<p><a name="_page12_x66.00_y70.00"></a>                                   1  1  1  1  1  1<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.004.png" alt="ref3"></p>
+<p><code>     </code>0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  \</p>
+<p><code>   </code>|                  MESSAGE ID                   |   \</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|QR| OPCODE(6) |         Z          |   RCODE   |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             QDCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+     &gt; HEADER    |             ANCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             NSCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             ARCOUNT (MUST BE ZERO)            |   /</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  /</p>
+<p><a href="#_page12_x66.00_y70.00">*Figure 2:</a> <em><a href="#_page12_x66.00_y70.00">SUBSCRIBE Response* </a></em></p>
+<p>In the SUBSCRIBE response, the RCODE indicates whether or not the subscription was accepted. Supported RCODEs are as follows:</p>
+<table>
+<thead>
+<tr>
+<th><a name="_page12_x66.00_y332.00"></a><a name="_page12_x77.00_y332.00"></a><strong>Mnemonic</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOERROR</td>
+<td>0</td>
+<td>SUBSCRIBE successful.</td>
+</tr>
+<tr>
+<td>FORMERR</td>
+<td>1</td>
+<td>Server failed to process request due to a malformed request.</td>
+</tr>
+<tr>
+<td>SERVFAIL</td>
+<td>2</td>
+<td>Server failed to process request due to a problem with the server.</td>
+</tr>
+<tr>
+<td>NOTIMP</td>
+<td>4</td>
+<td>Server does not implement DSO.</td>
+</tr>
+<tr>
+<td>REFUSED</td>
+<td>5</td>
+<td>Server refuses to process request for policy or security reasons.</td>
+</tr>
+<tr>
+<td>NOTAUTH</td>
+<td>9</td>
+<td>Server is not authoritative for the requested name.</td>
+</tr>
+<tr>
+<td>DSOTYPENI</td>
+<td>11</td>
+<td>SUBSCRIBE operation not supported.</td>
+</tr>
+</tbody></table>
+<p><a href="#_page12_x77.00_y332.00">*Table 1:</a> <em><a href="#_page12_x66.00_y332.00">SUBSCRIBE Response Codes* </a></em></p>
+<p>This document specifies only these RCODE values for SUBSCRIBE Responses. Servers sending SUBSCRIBE Responses <strong>SHOULD</strong> use one of these values. Note that NXDOMAIN is not a valid RCODE in response to a SUBSCRIBE Request. However, future circumstances may create situations where other RCODE values are appropriate in SUBSCRIBE Responses, so clients <strong>MUST</strong> be prepared to accept and handle SUBSCRIBE Responses with any other nonzero RCODE error values.</p>
+<p>If the server sends a nonzero RCODE in the SUBSCRIBE response, that means:</p>
+<ol>
+<li>the client is (at least partially) misconfigured, or </li>
+<li>the server resources are exhausted, or </li>
+<li>there is some other unknown failure on the server. <img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"></li>
+</ol>
+<p>In any case, the client shouldn’t retry the subscription to this server right away. If multiple SRV records were returned as described in Section <a href="#_page8_x86.00_y637.00">6.1, Paragraph 9, Item 7, a subsequent</a> server <strong>MAY</strong> be tried immediately.</p>
+<p>If the client has other successful subscriptions to this server, these subscriptions remain even though additional subscriptions may be refused. Neither the client nor the server is required to close the connection, although either end may choose to do so.</p>
+<p>If the server sends a nonzero RCODE, then it <strong>SHOULD</strong> append a Retry Delay Additional TLV [<a href="#_page28_x66.00_y594.00">RFC8490]</a> to the response specifying a delay before the client attempts this operation again. Recommended values for the delay for different RCODE values are given below. These recommended values apply both to the default values a server should place in the Retry Delay Additional TLV and the default values a client should assume if the server provides no Retry Delay Additional TLV.</p>
+<p>For RCODE = 1 (FORMERR), the delay may be any value selected by the implementer. A value of five minutes is <strong>RECOMMENDED</strong> to reduce the risk of high load from defective clients. </p>
+<p>For RCODE = 2 (SERVFAIL), the delay should be chosen according to the level of server overload and the anticipated duration of that overload. By default, a value of one minute is <strong>RECOMMENDED</strong>. If a more serious server failure occurs, the delay may be longer in accordance with the specific problem encountered. </p>
+<p>For RCODE = 4 (NOTIMP), which occurs on a server that doesn’t implement DNS Stateful Operations [<a href="#_page28_x66.00_y594.00">RFC8490], it is</a> unlikely that the server will begin supporting DSO in the next few minutes, so the retry delay <strong>SHOULD</strong> be one hour. Note that in such a case, a server that doesn’t implement DSO is unlikely to place a Retry Delay Additional TLV in its response, so this recommended value in particular applies to what a client should assume by default. </p>
+<p>For RCODE = 5 (REFUSED), which occurs on a server that implements DNS Push Notifications but is currently configured to disallow DNS Push Notifications, the retry delay may be any value selected by the implementer and/or configured by the operator. </p>
+<p>If the server being queried is listed in a _dns‑push‑tls._tcp.<zone> SRV record for the zone, then this is a misconfiguration, since this server is being advertised as supporting DNS Push Notifications for this zone, but the server itself is not currently configured to perform that task. Since it is possible that the misconfiguration may be repaired at any time, the retry delay should not be set too high. By default, a value of 5 minutes is <strong>RECOMMENDED</strong>. </p>
+<p>For RCODE = 9 (NOTAUTH), which occurs on a server that implements DNS Push Notifications but is not configured to be authoritative for the requested name, the retry delay may be any value selected by the implementer and/or configured by the operator. </p>
+<p>If the server being queried is listed in a _dns‑push‑tls._tcp.<zone> SRV record for the zone, then this is a misconfiguration, since this server is being advertised as supporting DNS Push Notifications for this zone, but the server itself is not currently configured to perform that task. Since it is possible that the misconfiguration may be repaired at any time, the retry delay should not be set too high. By default, a value of 5 minutes is <strong>RECOMMENDED</strong>. </p>
+<p>For RCODE = 11 (DSOTYPENI), which occurs on a server that implements DSO but doesn’t implement DNS Push Notifications, it is unlikely that the server will begin supporting DNS Push Notifications in the next few minutes, so the retry delay <img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"> <strong>SHOULD</strong> be one hour. </p>
+<p>For other RCODE values, the retry delay should be set by the server as appropriate for that error condition. By default, a value of 5 minutes is <strong>RECOMMENDED</strong>. </p>
+<p>For RCODE = 9 (NOTAUTH), the time delay applies to requests for other names falling within the same zone. Requests for names falling within other zones are not subject to the delay. For all other RCODEs, the time delay applies to all subsequent requests to this server.</p>
+<p>After sending an error response, the server  <strong>MAY</strong> allow the session to remain open, or <strong>MAY</strong> follow it with a DSO Retry Delay operation (using the Retry Delay Primary TLV) instructing the client to close the session as described in the DSO <a href="#_page28_x66.00_y594.00">specification [RFC8490]. Clients </a><strong>MUST</strong> correctly handle both cases. Note that the DSO Retry Delay operation (using the Retry Delay Primary TLV) is di<a name="_page14_x66.00_y269.00"></a>fferent to the Retry Delay Additional TLV mentioned above.</p>
+<ol start="3">
+<li><a href="#_page14_x66.00_y269.00"><strong>DNS Push Notification Updates</strong> </a></li>
+</ol>
+<p>Once a subscription has been successfully established, the server generates PUSH messages to send to the client as appropriate. In the case that the answer set was already non-empty at the moment the subscription was established, an initial PUSH message will be sent immediately following the SUBSCRIBE Response. Subsequent changes to the answer set are then communicated to the client in subsequent PUSH messages.</p>
+<p>A client <strong>MUST NOT</strong> send a PUSH message. If a client does send a PUSH message, or a PUSH message is sent with the QR bit set indicating that it is a response, this is a fatal error and the receiver <a name="_page14_x66.00_y424.00"></a><strong>MUST</strong> forcibly abort the connection immediately.</p>
+<p><a href="#_page14_x66.00_y424.00"><strong>6.3.1.  PUSH Message</strong> </a></p>
+<p>A PUSH unidirectional message begins with the standard DSO 12-byte header [RFC8490] , followed by the PUSH Primary TLV. A PUSH message is illustrated in Figure 3.</p>
+<p>In accordance with the definition of DSO unidirectional messages, the MESSAGE ID field <strong>MUST</strong> be zero. There is no client response to a PUSH message.</p>
+<p>The other header fields <strong>MUST</strong> be set as described in the DSO specification  [<a href="#_page28_x66.00_y594.00">RFC8490]</a>. The <a href="#_page28_x66.00_y594.00">DNS </a>OPCODE field contains the OPCODE value for DNS Stateful Operations (6). The four count fields must be zero, and the corresponding four sections must be empty (i.e., absent).</p>
+<p>The DSO-TYPE is PUSH (0x0041).</p>
+<p>The DSO-LENGTH is the length of the DSO-DATA that follows, which specifies the changes being communicated.</p>
+<p>The DSO-DATA contains one or more change notifications. A PUSH Message  <strong>MUST</strong> contain at least one change notification. If a PUSH Message is received that contains no change notifications, this is a fatal error and the client <strong>MUST</strong> forcibly abort the connection immediately.</p>
+<p>The change notification records are formatted similarly to how DNS Resource Records are conventionally expressed in DNS messages, as illustrated in <img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1">Figure 3, <a href="#_page17_x66.00_y250.00">and are interpreted</a> as described below.</p>
+<p>The TTL field holds an unsigned 32-bit integer [<a href="#_page28_x66.00_y70.00">RFC2181]</a>. If <a href="#_page28_x66.00_y70.00">the TTL is </a>in the range 0 to 2,147,483,647 seconds (0 to 231 - 1, or 0x7FFFFFFF), then a new DNS Resource Record with the</p>
+<p>given name, type, class, and RDATA is added. Type and class <strong>MUST NOT</strong> be 255 (ANY). If either type or class are 255 (ANY), this is a fatal error and the client  <strong>MUST</strong> forcibly abort the connection immediately. A TTL of 0 means that this record should be retained for as long as the subscription is active and should be discarded immediately the moment the subscription is canceled.</p>
+<p>If the TTL has the value 0xFFFFFFFF, then the DNS Resource Record with the given name, type, class, and RDATA is removed. Type and class <strong>MUST NOT</strong> be 255 (ANY). If either type or class are 255 (ANY), this is a fatal error and the client  <strong>MUST</strong> forcibly abort the connection immediately.</p>
+<p>If the TTL has the value 0xFFFFFFFE, then this is a ‘collective’ remove notification. For collective remove notifications, RDLEN <strong>MUST</strong> be zero, and consequently, the RDATA  <strong>MUST</strong> be empty. If a change notification is received where TTL = 0xFFFFFFFE and RDLEN is not zero, this is a fatal error and the client <strong>MUST</strong> forcibly abort the connection immediately.</p>
+<p>There are three types of collective remove notification. For collective remove notifications:</p>
+<ul>
+<li>If CLASS is not 255 (ANY) and TYPE is not 255 (ANY), then for the given name, this removes all records of the specified type in the specified class. </li>
+<li>If CLASS is not 255 (ANY) and TYPE is 255 (ANY), then for the given name, this removes all records of all types in the specified class. </li>
+<li>If CLASS is 255 (ANY), then for the given name, this removes all records of all types in all classes. In this case, TYPE <strong>MUST</strong> be set to zero on transmission and  <strong>MUST</strong> be silently ignored on reception. </li>
+</ul>
+<p>Summary of change notification types:</p>
+<ul>
+<li><p>Remove all RRsets from a name in all classes: TTL = 0xFFFFFFFE, RDLEN = 0, CLASS = 255 (ANY).</p>
+</li>
+<li><p>Remove all RRsets from a name in given class: TTL = 0xFFFFFFFE, RDLEN = 0, CLASS gives class, TYPE = 255 (ANY).</p>
+</li>
+<li><p>Remove specified RRset from a name in given class: TTL = 0xFFFFFFFE, RDLEN = 0, CLASS and TYPE specify the RRset being removed.</p>
+</li>
+<li><p>Remove an individual RR from a name:</p>
+<p>TTL = 0xFFFFFFFF,</p>
+</li>
+</ul>
+<p>CLASS, TYPE, RDLEN, and RDATA specify the RR being removed.</p>
+<ul>
+<li><p>Add individual RR to a name:<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></p>
+<p>TTL &gt;= 0 and TTL &lt;= 0x7FFFFFFF,</p>
+</li>
+</ul>
+<p>CLASS, TYPE, RDLEN, RDATA, and TTL specify the RR being added.</p>
+<p>Note that it is valid for the RDATA of an added or removed DNS Resource Record to be empty (zero length). For example, an Address Prefix List Resource Record [RFC3123]<a href="#_page29_x66.00_y233.00"> </a>may have <a href="#_page29_x66.00_y233.00">empty </a>RDATA. Therefore, a change notification with RDLEN = 0 does not automatically indicate a remove notification. If RDLEN = 0 and TTL is in the range 0 to 0x7FFFFFFF, this change notification signals the addition of a record with the given name, type, class, and empty RDATA. If RDLEN = 0 and TTL = 0xFFFFFFFF, this change notification signals the removal specifically of that single record with the given name, type, class, and empty RDATA.</p>
+<p>If the TTL is any value other than 0xFFFFFFFF, 0xFFFFFFFE, or a value in the range 0 to 0x7FFFFFFF, then the receiver <strong>SHOULD</strong> silently ignore this particular change notification record. The connection is not terminated and other valid change notification records within this PUSH message are processed as usual.</p>
+<p>In the case where a single change affects more than one active subscription, only one PUSH message is sent. For example, a PUSH message adding a given record may match both a SUBSCRIBE request with the same TYPE and a different SUBSCRIBE request with TYPE = 255 (ANY). It is not the case that two PUSH messages are sent because the new record matches two active subscriptions.</p>
+<p>The server <strong>SHOULD</strong> encode change notifications in the most efficient manner possible. For example, when three AAAA records are removed from a given name, and no other AAAA records exist for that name, the server <strong>SHOULD</strong> send a “Remove specified RRset from a name in given class” PUSH message, not three separate “Remove an individual RR from a name” PUSH messages. Similarly, when both an SRV and a TXT record are removed from a given name, and no other records of any kind exist for that name in that class, the server  <strong>SHOULD</strong> send a “Remove all RRsets from a name in given class” PUSH message, not two separate “Remove specified RRset from a name in given class” PUSH messages.</p>
+<p>For efficiency, when generating a PUSH message, rather than sending each change notification as a separate DSO message, a server <strong>SHOULD</strong> include as many change notifications as it has immediately available to send to that client, even if those change notifications apply to different subscriptions from that client. Conceptually, a PUSH message is a session-level mechanism, not a subscription-level mechanism. Once it has exhausted the list of change notifications immediately available to send to that client, a server <strong>SHOULD</strong> then send the PUSH message immediately rather than waiting speculatively to see if additional change notifications become available.</p>
+<p>For efficiency, when generating a PUSH message a server  <strong>SHOULD</strong> use standard DNS name compression, with offsets relative to the beginning of the DNS message  [<a href="#_page27_x66.00_y480.00">RFC1035]</a>. <a href="#_page27_x66.00_y480.00">When multiple </a>change notifications in a single PUSH message have the same owner name, this name compression can yield significant savings. Name compression should be performed as specified in <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc6762#section-18.14">Section 18.14 of</a> the Multicast DNS specification [<a href="#_page29_x66.00_y401.00">RFC6762]; namely</a>, owner names should always be compressed, and names appearing within RDATA should be compressed for only the RR types listed below:</p>
+<p>NS, CNAME, PTR, DNAME, SOA, MX, AFSDB, RT, KX, RP, PX, SRV, NSEC <img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"></p>
+<p>Servers may generate PUSH messages up to a maximum DNS message length of 16,382 bytes, counting from the start of the DSO 12-byte header. Including the two-byte length prefix that is used to frame DNS over a byte stream like TLS, this makes a total of 16,384 bytes. Servers <strong>MUST NOT</strong> generate PUSH messages larger than this. Where the immediately available change notifications are sufficient to exceed a DNS message length of 16,382 bytes, the change notifications <strong>MUST</strong> be communicated in separate PUSH messages of up to 16,382 bytes each. DNS name compression becomes less effective for messages larger than 16,384 bytes, so little efficiency benefit is gained by sending messages larger than this.</p>
+<p>If a client receives a PUSH message with a DNS message length larger than 16,382 bytes, this is a fatal error and the client <strong>MUST</strong> forcibly abort the connection immediately.</p>
+<p><a name="_page17_x66.00_y250.00"></a>                                   1  1  1  1  1  1</p>
+<p><code>     </code>0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  \</p>
+<p><code>   </code>|           MESSAGE ID (MUST BE ZERO)           |   \</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|QR| OPCODE(6) |         Z          |   RCODE   |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             QDCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+     &gt; HEADER</p>
+<p><code>   </code>|             ANCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             NSCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             ARCOUNT (MUST BE ZERO)            |   /</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  /</p>
+<p><code>   </code>|            DSO-TYPE = PUSH (0x0041)           |    +–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+</p>
+<p><code>   </code>|   DSO-LENGTH (number of octets in DSO-DATA)   |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  \</p>
+<p><code>   </code>\                     NAME                      \   \</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|                     TYPE                      |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|                     CLASS                     |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|                      TTL                      |    |</p>
+<p><code>   </code>|     (32-bit unsigned big-endian integer)      |     &gt; DSO-DATA    +–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|  RDLEN (16-bit unsigned big-endian integer)   |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>\           RDATA (sized as necessary)          \    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<ul>
+<li>NAME, TYPE, CLASS, TTL, RDLEN, RDATA      :    |</li>
+<li>Repeated As Necessary             :   /</li>
+</ul>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  /</p>
+<p><a href="#_page17_x66.00_y250.00">*Figure 3:</a> <em><a href="#_page17_x66.00_y250.00">PUSH Message* </a></em></p>
+<p>When processing the records received in a PUSH Message, the receiving client  <strong>MUST</strong> validate that<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></p>
+<p>the records being added or removed correspond with at least one currently active subscription on that session. Specifically, the record name  <strong>MUST</strong> match the name given in the SUBSCRIBE request, subject to the usual established DNS case-insensitivity for US-ASCII letters. For</p>
+<p>individual additions and removals, if the TYPE in the SUBSCRIBE request was not ANY (255), then the TYPE of the record must either be CNAME or match the TYPE given in the SUBSCRIBE</p>
+<p>request, and if the CLASS in the SUBSCRIBE request was not ANY (255), then the CLASS of the record must match the CLASS given in the SUBSCRIBE request. For collective removals, at least one of the records being removed must match an active subscription. If a matching active subscription on that session is not found, then that particular addition/removal record is silently ignored. The processing of other additions and removal records in this message is not affected. The DSO session is not closed. This is to allow for the unavoidable race condition where a client sends an outbound UNSUBSCRIBE while inbound PUSH messages for that subscription from the</p>
+<p>server are still in flight.</p>
+<p>The TTL of an added record is stored by the client. While the subscription is active the TTL is not decremented, because a change to the TTL would produce a new update. For as long as a relevant subscription remains active, the client <strong>SHOULD</strong> assume that when a record goes away, the server will notify it of that fact. Consequently, a client does not have to poll to verify that the record is still there. Once a subscription is canceled (individually, or as a result of the DSO session being closed), record aging for records covered by the subscription resumes and records are removed from the local cache when their TTL reaches zero.</p>
+<ol start="4">
+<li><a name="_page18_x66.00_y363.00"></a><a href="#_page18_x66.00_y363.00"><strong>DNS Push Notification UNSUBSCRIBE</strong> </a></li>
+</ol>
+<p>To cancel an individual subscription without closing the entire DSO session, the client sends an UNSUBSCRIBE message over the established DSO session to the server.</p>
+<p>The entity that initiates an UNSUBSCRIBE message is by definition the client. A server <strong>MUST NOT</strong> send an UNSUBSCRIBE message over an existing session from a client. If a server does send an UNSUBSCRIBE message over a DSO session initiated by a client, or an UNSUBSCRIBE message is sent with the QR bit set indicating that it is a response, this is a fatal error and the receiver <strong>MUST</strong> forcibly abort the connection immediately<a name="_page18_x66.00_y504.00"></a>.</p>
+<p><a href="#_page18_x66.00_y504.00"><strong>6.4.1.  UNSUBSCRIBE Message</strong> </a></p>
+<p>An UNSUBSCRIBE unidirectional message begins with the standard DSO 12-byte header [<a href="#_page28_x66.00_y594.00">RFC8490]</a>, followed by the UNSUBSCRIBE Primary TLV. An UNSUBSCRIBE message is illustrated in <a href="#_page19_x66.00_y328.00">Figure 4.</a></p>
+<p>In accordance with the definition of DSO unidirectional messages, the MESSAGE ID field <strong>MUST</strong> be zero. There is no server response to an UNSUBSCRIBE message.</p>
+<p>The other header fields <strong>MUST</strong> be set as described in the  DSO<a href="#_page28_x66.00_y594.00"> specification [RFC8490]. The DNS </a>OPCODE field contains the OPCODE value for DNS Stateful Operations (6). The four count fields must be zero, and the corresponding four sections must be empty (i.e., absent).</p>
+<p>The DSO-TYPE is UNSUBSCRIBE (0x0042).</p>
+<p>The DSO-LENGTH field contains the value 2, the length of the 2-octet MESSAGE ID contained in the DSO-DATA.<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.005.png"></p>
+<p>The DSO-DATA contains the value previously given in the MESSAGE ID field of an active SUBSCRIBE request. This is how the server knows which SUBSCRIBE request is being canceled. After receipt of the UNSUBSCRIBE message, the SUBSCRIBE request is no longer active.</p>
+<p>It is allowable for the client to issue an UNSUBSCRIBE message for a previous SUBSCRIBE request for which the client has not yet received a SUBSCRIBE response. This is to allow for the case where a client starts and stops a subscription in less than the round-trip time to the server. The client is NOT required to wait for the SUBSCRIBE response before issuing the UNSUBSCRIBE message.</p>
+<p>Consequently, it is possible for a server to receive an UNSUBSCRIBE message that does not match any currently active subscription. This can occur when a client sends a SUBSCRIBE request, which subsequently fails and returns an error code, but the client sent an UNSUBSCRIBE</p>
+<p>message before it became aware that the SUBSCRIBE request had failed. Because of this, servers <strong>MUST</strong> silently ignore UNSUBSCRIBE messages that do not match any currently active subscription.</p>
+<p><a name="_page19_x66.00_y328.00"></a>                                   1  1  1  1  1  1</p>
+<p><code>     </code>0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  \</p>
+<p><code>   </code>|           MESSAGE ID (MUST BE ZERO)           |   \</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|QR| OPCODE(6) |         Z          |   RCODE   |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             QDCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+     &gt; HEADER    |             ANCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             NSCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             ARCOUNT (MUST BE ZERO)            |   /</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  /</p>
+<p><code>   </code>|         DSO-TYPE = UNSUBSCRIBE (0x0042)       |    +–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+</p>
+<p><code>   </code>|                DSO-LENGTH (2)                 |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  \</p>
+<p><code>   </code>|              SUBSCRIBE MESSAGE ID             |   &gt; DSO-DATA    +–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  /</p>
+<p><a href="#_page19_x66.00_y328.00">*Figure 4:</a><a name="_page19_x66.00_y592.00"></a> <em><a href="#_page19_x66.00_y328.00">UNSUBSCRIBE Message* </a></em></p>
+<ol start="5">
+<li><a href="#_page19_x66.00_y592.00"><strong>DNS Push Notification RECONFIRM</strong> </a></li>
+</ol>
+<p>Sometimes, particularly when used with a Discovery Proxy [RFC8766<a href="#_page30_x66.00_y217.00">]</a>, a DNS <a href="#_page30_x66.00_y217.00">Zone may contain </a>stale data. When a client encounters data that it believes may be stale (e.g., an SRV record referencing a target host+port that is not responding to connection requests), the client can send a RECONFIRM message to ask the server to re-verify that the data is still valid. For a Discovery Proxy, this causes it to issue new Multicast DNS queries to ascertain whether the target device is still present. How the Discovery Proxy causes these new Multicast DNS queries to be issued depends on the details of the underlying Multicast DNS implementation being used. For example, a Discovery Proxy built on Apple’s dns_sd.h API <img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1">[SD-API<a href="#_page30_x66.00_y266.00">] responds to a</a> DNS Push Notification RECONFIRM message by calling the underlying API’s DNSServiceReconfirmRecord() routine.</p>
+<p>For other types of DNS server, the RECONFIRM operation is currently undefined and <strong>SHOULD</strong> result in a NOERROR response, but it need not cause any other action to occur.</p>
+<p>Frequent use of RECONFIRM operations may be a sign of network unreliability, or some kind of misconfiguration, so RECONFIRM operations  <strong>MAY</strong> be logged or otherwise communicated to a human administrator to assist in detecting and remedying such network problems.</p>
+<p>If, after receiving a valid RECONFIRM message, the server determines that the disputed records are in fact no longer valid, then subsequent DNS PUSH Messages will be generated to inform interested clients. Thus, one client discovering that a previously advertised device (like a network printer) is no longer present has the side effect of informing all other interested clients that the device in question is now gone.</p>
+<p>The entity that initiates a RECONFIRM message is by definition the client. A server <strong>MUST NOT</strong> send a RECONFIRM message over an existing session from a client. If a server does send a RECONFIRM message over a DSO session initiated by a client, or a RECONFIRM message is sent with the QR bit set indicating that it is a response, this is a fatal error and the receiver <strong>MUST</strong> forcibly abort the connection immediately<a name="_page20_x66.00_y379.00"></a>.</p>
+<p><a href="#_page20_x66.00_y379.00"><strong>6.5.1.  RECONFIRM Message</strong> </a></p>
+<p>A RECONFIRM unidirectional message begins with the standard DSO 12-byte header [RFC8490] , followed by the RECONFIRM Primary TLV. A RECONFIRM message is illustrated in Figure 5.</p>
+<p>In accordance with the definition of DSO unidirectional messages, the MESSAGE ID field <strong>MUST</strong> be zero. There is no server response to a RECONFIRM message.</p>
+<p>The other header fields <strong>MUST</strong> be set as described in the  DSO<a href="#_page28_x66.00_y594.00"> specification [RFC8490]. The DNS </a>OPCODE field contains the OPCODE value for DNS Stateful Operations (6). The four count fields must be zero, and the corresponding four sections must be empty (i.e., absent).</p>
+<p>The DSO-TYPE is RECONFIRM (0x0043).</p>
+<p>The DSO-LENGTH is the length of the data that follows, which specifies the name, type, class, and content of the record being disputed.</p>
+<p>A DNS Push Notifications RECONFIRM message contains exactly one RECONFIRM Primary TLV. The DSO-DATA in a RECONFIRM Primary TLV <strong>MUST</strong> contain exactly one record. The DSO-DATA in a RECONFIRM Primary TLV has no count field to specify more than one record. Since RECONFIRM messages are sent over TCP, multiple RECONFIRM messages can be concatenated in a single TCP stream and packed efficiently into TCP segments. Note that this means that DNS name compression cannot be used between different RECONFIRM messages. However, when a</p>
+<p>client is sending multiple RECONFIRM messages this indicates a situation with serious network problems, and this is not expected to occur frequently enough that optimizing efficiency in this case is important.<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"></p>
+<p>TYPE <strong>MUST NOT</strong> be the value ANY (255) and CLASS <strong>MUST NOT</strong> be the value ANY (255).</p>
+<p>DNS wildcarding is not supported. That is, an asterisk character (“*“) in a RECONFIRM message matches only a literal asterisk character (“*“) in a name and nothing else. Similarly, a CNAME in a RECONFIRM message matches only a CNAME record with that name in the zone and no other records with that name.</p>
+<p>Note that there is no RDLEN field, since the length of the RDATA can be inferred from DSO- LENGTH, so an additional RDLEN field would be redundant.</p>
+<p>Following the same rules as for PUSH messages, DNS name compression SHOULD be used within the RDATA of the RECONFIRM message, with offsets relative to the beginning of the DNS message [<a href="#_page27_x66.00_y480.00">RFC1035]</a>.</p>
+<p><a name="_page21_x66.00_y297.00"></a>                                   1  1  1  1  1  1</p>
+<p><code>     </code>0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  \</p>
+<p><code>   </code>|           MESSAGE ID (MUST BE ZERO)           |   \</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|QR| OPCODE(6) |         Z          |   RCODE   |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             QDCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+     &gt; HEADER</p>
+<p><code>   </code>|             ANCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             NSCOUNT (MUST BE ZERO)            |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|             ARCOUNT (MUST BE ZERO)            |   /</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  /</p>
+<p><code>   </code>|         DSO-TYPE = RECONFIRM (0x0043)         |    +–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+</p>
+<p><code>   </code>|   DSO-LENGTH (number of octets in DSO-DATA)   |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  \</p>
+<p><code>   </code>\                     NAME                      \   \</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>|                     TYPE                      |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+     &gt; DSO-DATA    |                     CLASS                     |    |</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+    |</p>
+<p><code>   </code>\                     RDATA                     \   /</p>
+<p><code>   </code>+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+–+  /</p>
+<p><a href="#_page21_x66.00_y297.00">*Figure 5:</a> <em><a href="#_page21_x66.00_y297.00">RECONFIRM Message* </a></em></p>
+<ol start="6">
+<li><a href="#_page22_x66.00_y70.00"><strong>DNS Stateful Operations TLV Context Summary</strong> </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.004.png" alt="ref3"></li>
+</ol>
+<p><a name="_page22_x66.00_y70.00"></a>This document defines four new DSO TLVs. As recommended in Section <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc8490#section-8.2">8.2 of the DNS</a> Stateful Operations specification [<a href="#_page28_x66.00_y594.00">RFC8490], the</a> valid contexts of these new TLV types are summarized below.</p>
+<p>The client TLV contexts are:</p>
+<p>C-P: Client request message, Primary TLV </p>
+<p>C-U: Client Unidirectional message, primary TLV </p>
+<p>C-A: Client request or unidirectional message, Additional TLV CRP: Response back to client, Primary TLV </p>
+<p>CRA: Response back to client, Additional TLV </p>
+<table>
+<thead>
+<tr>
+<th><a name="_page22_x66.00_y262.00"></a><a name="_page22_x172.00_y262.00"></a><strong>TLV Type C-P C-U C-A CRP CRA</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SUBSCRIBE X</td>
+</tr>
+<tr>
+<td>PUSH</td>
+</tr>
+<tr>
+<td>UNSUBSCRIBE X</td>
+</tr>
+<tr>
+<td>RECONFIRM X</td>
+</tr>
+</tbody></table>
+<p><a href="#_page22_x172.00_y262.00">*Table 2:</a> <em><a href="#_page22_x66.00_y262.00">DSO TLV Client Context Summary* </a></em></p>
+<p>The server TLV contexts are:</p>
+<p>S-P: Server request message, Primary TLV </p>
+<p>S-U: Server Unidirectional message, primary TLV </p>
+<p>S-A: Server request or unidirectional message, Additional TLV SRP: Response back to server, Primary TLV </p>
+<p>SRA: Response back to server, Additional TLV </p>
+<table>
+<thead>
+<tr>
+<th><a name="_page22_x66.00_y510.00"></a><a name="_page22_x174.00_y510.00"></a><strong>TLV Type S-P S-U S-A SRP SRA</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SUBSCRIBE</td>
+</tr>
+<tr>
+<td>PUSH X</td>
+</tr>
+<tr>
+<td>UNSUBSCRIBE</td>
+</tr>
+<tr>
+<td>RECONFIRM</td>
+</tr>
+</tbody></table>
+<p><a href="#_page22_x174.00_y510.00">*Table 3:</a> <em><a href="#_page22_x66.00_y510.00">DSO TLV Server Context Summary* </a></em></p>
+<ol start="7">
+<li><a href="#_page23_x66.00_y70.00"><strong>Client-Initiated Termination</strong> </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"></li>
+</ol>
+<p><a name="_page23_x66.00_y70.00"></a>An individual subscription is terminated by sending an UNSUBSCRIBE TLV for that specific subscription, or all subscriptions can be canceled at once by the client closing the DSO session. When a client terminates an individual subscription (via UNSUBSCRIBE) or all subscriptions on that DSO session (by ending the session), it is signaling to the server that it is no longer interested in receiving those particular updates. It is informing the server that the server may release any state information it has been keeping with regards to these particular subscriptions.</p>
+<p>After terminating its last subscription on a session via UNSUBSCRIBE, a client  <strong>MAY</strong> close the session immediately or it may keep it open if it anticipates performing further operations on that session in the future. If a client wishes to keep an idle session open, it  <strong>MUST</strong> respect the maximum idle time required by the server [RFC8490].</p>
+<p>If a client plans to terminate one or more subscriptions on a session and doesn’t intend to keep that session open, then as an efficiency optimization, it  <strong>MAY</strong> instead choose to simply close the session, which implicitly terminates all subscriptions on that session. This may occur because the client computer is being shut down, is going to sleep, the application requiring the subscriptions has terminated, or simply because the last active subscription on that session has been canceled.</p>
+<p>When closing a session, a client should perform an orderly close of the TLS session. Typical APIs will provide a session close method that will send a TLS close_notify alert as described in Section <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc8446#section-6.1">6.1 </a>of the TLS 1.3 specification [<a href="#_page28_x66.00_y558.00">RFC8446]. This</a> instructs the recipient that the sender will not send any more data over the session. After sending the TLS close_notify alert, the client <strong>MUST</strong> gracefully close the underlying connection using a TCP FIN so that the TLS close_notify is reliably delivered. The mechanisms for gracefully closing a TCP connection with a TCP FIN vary depending on the networking API. For example, in the BSD Sockets API, sending a TCP FIN is achieved by calling “shutdown(s,SHUT_WR)” and keeping the socket open until all remaining data has been read from it.</p>
+<p>If the session is forcibly closed at the TCP level by sending a RST from either end of the connection, data ma<a name="_page23_x66.00_y500.00"></a>y be lost.</p>
+<ol start="8">
+<li><a href="#_page23_x66.00_y500.00"><strong>Client Fallback to Polling</strong> </a></li>
+</ol>
+<p>There are cases where a client may exhaust all avenues for establishing a DNS Push Notification subscription without success. This can happen if the client’s configured recursive resolver does not support DNS over TLS, or supports DNS over TLS but is not listening on TCP port 853, or supports DNS over TLS on TCP port 853 but does not support DSO on that port, or for some other reason is unable to provide a DNS Push Notification subscription. In this case, the client will attempt to communicate directly with an appropriate server, and it may be that the zone apex discovery fails, or there is no _dns‑push‑tls._tcp.<zone> SRV record, or the server indicated in the SRV record is misconfigured, overloaded, or is unresponsive for some other reason.</p>
+<p>Regardless of the reason for the failure, after being unable to establish the desired DNS Push Notification subscription, it is likely that the client will still wish to know the answer it seeks, even if that answer cannot be obtained with the timely change notifications provided by DNS Push Notifications. In such cases, it is likely that the client will obtain the answer it seeks via a conventional DNS query instead, repeated at some interval to detect when the answer RRset changes.<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></p>
+<p>In the case where a client responds to its failure to establish a DNS Push Notification subscription by falling back to polling with conventional DNS queries instead, the polling rate should be controlled to avoid placing excessive burden on the server. The interval between successive DNS queries for the same name, type, and class <strong>SHOULD</strong> be at least the minimum of 900 seconds (15 minutes) or two seconds more than the TTL of the answer RRset.</p>
+<p>The reason that for TTLs up to 898 seconds the query should not be reissued until two seconds <em>after</em> the answer RRset has expired, is to ensure that the answer RRset has also expired from the cache on the client’s configured recursive resolver. Otherwise (particularly if the clocks on the client and the recursive resolver do not run at precisely the same rate), there’s a risk of a race condition where the client queries its configured recursive resolver just as the answer RRset has one second remaining in the recursive resolver’s cache. The client would receive a reply telling it that the answer RRset has one second remaining; the client would then requery the recursive resolver again one second later. If by this time the answer RRset has actually expired from the recursive resolver’s cache, the recursive resolver would then issue a new query to fetch fresh data from the authoritative server. Waiting until the answer RRset has definitely expired from the cache on the client’s configured recursive resolver avoids this race condition and any unnecessary additional queries it causes.</p>
+<p>Each time a client is about to reissue its query to discover changes to the answer RRset, it should first make a new attempt to establish a DNS Push Notification subscription using previously cached DNS answers as appropriate. After a temporary misconfiguration has been remedied, this allows a client that is polling to return to using DNS Push Notifications for asynchronous noti<a name="_page24_x66.00_y478.00"></a>fication of changes.</p>
+<ol start="7">
+<li><a href="#_page24_x66.00_y478.00"><strong>Security Considerations</strong> </a></li>
+</ol>
+<p>The Strict Privacy profile for DNS over TLS is <strong>REQUIRED</strong> for DNS Push Notifications [RFC8310]. Cleartext connections for DNS Push Notifications are not permissible. Since this is a new protocol, transition mechanisms from the Opportunistic Privacy profile are unnecessary.</p>
+<p>Also, see <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc8310#section-9">Section 9 of</a> the document Usage Profiles for DNS over (D)TLS [RFC8310<a href="#_page28_x66.00_y510.00">] for additional </a>recommendations for various versions of TLS usage.</p>
+<p>As a consequence of requiring TLS, client certificate authentication and verification may also be enforced by the server for stronger client-server security or end-to-end security. However, recommendations for security in particular deployment scenarios are outside the scope of this document.</p>
+<p>DNSSEC is <strong>RECOMMENDED</strong> for the authentication of DNS Push Notification servers. TLS alone does not provide complete security. TLS certificate verification can provide reasonable assurance that the client is really talking to the server associated with the desired host name, but since the desired host name is learned via a DNS SRV query, if the SRV query is subverted, then the client may have a secure connection to a rogue server. DNSSEC can provide added confidence that the SR<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"><a name="_page25_x66.00_y149.00"></a>V query has not been subverted.</p>
+<ol>
+<li><a href="#_page25_x66.00_y149.00"><strong>Security Services</strong> </a></li>
+</ol>
+<p>It is the goal of using TLS to provide the following security services:</p>
+<p>Confidentiality: All application-layer communication is encrypted with the goal that no party</p>
+<p>should be able to decrypt it except the intended receiver. </p>
+<p>Data integrity protection: Any changes made to the communication in transit are detectable by</p>
+<p>the receiver. </p>
+<p>Authentication: An endpoint of the TLS communication is authenticated as the intended entity</p>
+<p>to communicate with. </p>
+<p>Anti-replay protection: TLS provides for the detection of and prevention against messages sent</p>
+<p>previously over a TLS connection (such as DNS Push Notifications). If prior messages are re-sent at a later time as a form of a man-in-the-middle attack, then the receiver will detect this and reject the replayed messages. </p>
+<p>Deployment recommendations on the appropriate key lengths and cipher suites are beyond the scope of this document. Please refer to the current TLS Recommendations  [<a href="#_page29_x66.00_y114.00">BCP195]</a> for<a href="#_page29_x66.00_y114.00"> the best </a>current practices. Keep in mind that best practices only exist for a snapshot in time, and recommendations will continue to change. Updated versions or errata may exist for these recommendations.</p>
+<ol start="2">
+<li><a name="_page25_x66.00_y446.00"></a><a href="#_page25_x66.00_y446.00"><strong>TLS Name Authentication</strong> </a></li>
+</ol>
+<p>As described in <a href="#_page6_x66.00_y565.00">Section 6.1, the</a> client discovers the DNS Push Notification server using an SRV lookup for the record name _dns‑push‑tls._tcp.<zone>. The server connection endpoint <strong>SHOULD</strong> then be authenticated using DANE TLSA records for the associated SRV record. This associates the target’s name and port number with a trusted TLS certificate  [<a href="#_page28_x66.00_y314.00">RFC7673]</a>. <a href="#_page28_x66.00_y314.00">This </a>procedure uses the TLS Server Name Indication (SNI) extension [RFC6066<a href="#_page28_x66.00_y154.00">] </a>to inform <a href="#_page28_x66.00_y154.00">the server </a>of the name the client has authenticated through the use of TLSA records. Therefore, if the SRV record passes DNSSEC validation and a TLSA record matching the target name is usable, an SNI extension must be used for the target name to ensure the client is connecting to the server it has authenticated. If the target name does not have a usable TLSA record, then the use of the SNI extension is optional. See Usage Profiles for DNS over TLS and DNS over DTLS [RFC8310] for more information on authenticating domain names.</p>
+<ol start="3">
+<li><a href="#_page26_x66.00_y70.00"><strong>TLS Early Data</strong> </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.003.png" alt="ref2"></li>
+</ol>
+<p><a name="_page26_x66.00_y70.00"></a>DSO messages with the SUBSCRIBE TLV as the Primary TLV are permitted in TLS early data. Using TLS early data can save one network round trip and can result in the client obtaining results faster.</p>
+<p>However, there are some factors to consider before using TLS early data.</p>
+<p>TLS early data is not forward secret. In cases where forward secrecy of DNS Push Notification subscriptions is required, the client should not use TLS early data.</p>
+<p>With TLS early data, there are no guarantees of non-replay between connections. If packets are duplicated and delayed in the network, the later arrivals could be mistaken for new subscription requests. Generally, this is not a major concern since the amount of state generated on the server for these spurious subscriptions is small and short lived since the TCP connection will not complete the three-way handshake. Servers  <strong>MAY</strong> choose to implement rate-limiting measures that are activated when the server detects an excessive number of spurious subscription requests.</p>
+<p>For further guidance on use of TLS early data, please see discussion of zero round-trip data in Sections <a name="_page26_x66.00_y351.00"></a><a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc8446#section-2.3">2.3 and</a> 8, <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc8446#section-8">and</a> Appendix E.5, <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc8446#appendix-E.5">of the</a> <a href="#_page28_x66.00_y558.00">TLS 1.3 specification [RFC8446].</a></p>
+<ol start="4">
+<li><a href="#_page26_x66.00_y351.00"><strong>TLS Session Resumption</strong> </a></li>
+</ol>
+<p>TLS session resumption [<a href="#_page28_x66.00_y558.00">RFC8446] is permissible</a> on DNS Push Notification servers. However, closing the TLS connection terminates the DSO session. When the TLS session is resumed, the DNS Push Notification server will not have any subscription state and will proceed as with any other new DSO session. Use of TLS session resumption may allow a TLS connection to be set up more quickly<a name="_page26_x66.00_y455.00"></a>, but the client will still have to recreate any desired subscriptions.</p>
+<ol start="8">
+<li><a href="#_page26_x66.00_y455.00"><strong>IANA Considerations</strong> </a></li>
+</ol>
+<p>This document defines a new service name, only applicable for the TCP protocol, which has been recorded in the IANA “Service Name and Transport Protocol Port Number Registry” [RFC6335] [<a href="#_page28_x66.00_y642.00">SRVTYPE</a>].</p>
+<p><a name="_page26_x66.00_y553.00"></a><a name="_page26_x100.00_y553.00"></a><strong>Name Port Value Section</strong></p>
+<p>DNS Push Notification Service Type None _dns‑push‑tls._tcp <a href="#_page6_x66.00_y565.00">6.1 </a><a href="#_page26_x100.00_y553.00">*Table 4:</a> <em><a href="#_page26_x66.00_y553.00">IANA Service Type Assignments* </a></em></p>
+<p>This document defines four new DNS Stateful Operation TLV types, which have been recorded in the IANA “DSO Type Codes” registry [<a href="#_page28_x66.00_y594.00">RFC8490] [DSO</a><a href="#_page27_x66.00_y304.00">TYPE</a>]<a href="#_page27_x66.00_y304.00">.</a></p>
+<table>
+<thead>
+<tr>
+<th><a name="_page27_x66.00_y70.00"></a><a name="_page27_x124.00_y70.00"></a><strong>Name Value Early Data Status Section</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SUBSCRIBE 0x0040 OK Standards Track <a href="#_page9_x66.00_y254.00">6.2 </a></td>
+</tr>
+<tr>
+<td>PUSH 0x0041 NO Standards Track <a href="#_page14_x66.00_y269.00">6.3 </a></td>
+</tr>
+<tr>
+<td>UNSUBSCRIBE 0x0042 NO Standards Track <a href="#_page18_x66.00_y363.00">6.4 </a></td>
+</tr>
+<tr>
+<td>RECONFIRM 0x0043 NO Standards Track <a href="#_page19_x66.00_y592.00">6.5 </a></td>
+</tr>
+</tbody></table>
+<p><a href="#_page27_x124.00_y70.00">*Table 5:</a> *<a href="#_page27_x66.00_y70.00">IANA DSO TLV Type Code Assignments* </a>*This document de<a name="_page27_x66.00_y227.00"></a>fines no new DNS OPCODEs or RCODEs.</p>
+<ol start="9">
+<li><a href="#_page27_x66.00_y227.00"><strong>References</strong> </a></li>
+<li><a name="_page27_x66.00_y261.00"></a><a href="#_page27_x66.00_y261.00"><strong>Normative References</strong> </a></li>
+</ol>
+<p><a name="_page27_x66.00_y304.00"></a><strong>[DSOTYPE]</strong> IANA, “Domain Name System (DNS) Parameters”, &lt;<a target="_blank" rel="noopener" href="https://www.iana.org/assignments/dns-parameters/">https://www.iana.org/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.iana.org/assignments/dns-parameters/">assignments/dns-parameters/&gt;. </a></p>
+<p><a name="_page27_x66.00_y340.00"></a><strong>[RFC0020]</strong> Cerf, V., “ASCII format for network interchange” , STD 80 , RFC 20 , DOI 10.17487/</p>
+<p>RFC0020, October 1969, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc20">https://www.rfc-editor.org/info/rfc20&gt;. </a></p>
+<p><a name="_page27_x66.00_y375.00"></a><strong>[RFC0768]</strong> Postel, J., “User Datagram Protocol” , STD 6 , RFC 768 , DOI 10.17487/RFC0768 , </p>
+<p>August 1980, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc768">https://www.rfc-editor.org/info/rfc768&gt;. </a></p>
+<p><a name="_page27_x66.00_y410.00"></a><strong>[RFC0793]</strong> Postel, J., “Transmission Control Protocol” , STD 7 , RFC 793 , DOI 10.17487/</p>
+<p>RFC0793, September 1981, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc793">https://www.rfc-editor.org/info/rfc793&gt;. </a></p>
+<p><a name="_page27_x66.00_y445.00"></a><strong>[RFC1034]</strong> Mockapetris, P. , “Domain names - concepts and facilities”, STD 13, RFC 1034, DOI</p>
+<p>10.17487/RFC1034, November 1987, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc1034">https://www.rfc-editor.org/info/rfc1034&gt;. </a><a name="_page27_x66.00_y480.00"></a><strong>[RFC1035]</strong> Mockapetris, P. , “Domain names - implementation and specification”, STD 13, </p>
+<p>RFC 1035, DOI 10.17487/RFC1035, November 1987, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc1035">https://www.rfc-editor.org/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc1035">info/rfc1035&gt;.</a> </p>
+<p><a name="_page27_x66.00_y529.00"></a><strong>[RFC1123]</strong> Braden, R., Ed. , “Requirements for Internet Hosts - Application and Support” , </p>
+<p>STD 3, RFC 1123, DOI 10.17487/RFC1123, October 1989, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc1123">https://www.rfc- editor.org/info/rfc1123&gt;. </a></p>
+<p><a name="_page27_x66.00_y578.00"></a><strong>[RFC2119]</strong> Bradner, S. , “Key words for use in RFCs to Indicate Requirement Levels”, BCP 14, </p>
+<p>RFC 2119, DOI 10.17487/RFC2119, March 1997, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/ rfc2119&gt;</a>. </p>
+<p><a name="_page27_x66.00_y627.00"></a><strong>[RFC2136]</strong> Vixie, P., Ed., Thomson, S., Rekhter, Y., and J. Bound , “Dynamic Updates in the</p>
+<p>Domain Name System (DNS UPDATE)” , RFC 2136 , DOI 10.17487/RFC2136 , April 1997, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc2136">https://www.rfc-editor.org/info/rfc2136&gt;. </a></p>
+<p><a name="_page28_x66.00_y70.00"></a><strong>[RFC2181]</strong> Elz, R. and R. Bush , “Clarifications to the DNS Specification” , RFC 2181, DOI<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></p>
+<p>10.17487/RFC2181, July 1997, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc2181">https://www.rfc-editor.org/info/rfc2181&gt;. </a>               <a name="_page28_x66.00_y106.00"></a><strong>[RFC2782]</strong> Gulbrandsen, A., Vixie, P., and L. Esibov , “A DNS RR for specifying the location of</p>
+<p>services (DNS SRV)” , RFC 2782 , DOI 10.17487/RFC2782 , February 2000, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc2782">https://</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc2782">www.rfc-editor.org/info/rfc2782&gt;. </a></p>
+<p><a name="_page28_x66.00_y154.00"></a><strong>[RFC6066]</strong> Eastlake 3rd, D. , “Transport Layer Security (TLS) Extensions: Extension</p>
+<p>Definitions” , RFC 6066 , DOI 10.17487/RFC6066 , January 2011, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc6066">https://www.rfc- editor.org/info/rfc6066&gt;. </a></p>
+<p><a name="_page28_x66.00_y203.00"></a><strong>[RFC6335]</strong> Cotton, M., Eggert, L., Touch, J., Westerlund, M., and S. Cheshire , “Internet</p>
+<p>Assigned Numbers Authority (IANA) Procedures for the Management of the Service Name and Transport Protocol Port Number Registry”, BCP 165, RFC 6335 , DOI 10.17487/RFC6335, August 2011, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc6335">https://www.rfc-editor.org/info/rfc6335&gt;. </a></p>
+<p><a name="_page28_x66.00_y266.00"></a><strong>[RFC6895]</strong> Eastlake 3rd, D. , “Domain Name System (DNS) IANA Considerations” , BCP 42 , </p>
+<p>RFC 6895, DOI 10.17487/RFC6895, April 2013, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc6895">https://www.rfc-editor.org/info/ rfc6895&gt;</a>. </p>
+<p><a name="_page28_x66.00_y314.00"></a><strong>[RFC7673]</strong> Finch, T., Miller, M., and P. Saint-Andre , “Using DNS-Based Authentication of</p>
+<p>Named Entities (DANE) TLSA Records with SRV Records” , RFC 7673, DOI</p>
+<p>10.17487/RFC7673, October 2015, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc7673">https://www.rfc-editor.org/info/rfc7673&gt;. </a><a name="_page28_x66.00_y363.00"></a><strong>[RFC7766]</strong> Dickinson, J., Dickinson, S., Bellis, R., Mankin, A., and D. Wessels , “DNS Transport</p>
+<p>over TCP - Implementation Requirements” , RFC 7766 , DOI 10.17487/RFC7766 , </p>
+<p>March 2016, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc7766">https://www.rfc-editor.org/info/rfc7766&gt;. </a></p>
+<p><a name="_page28_x66.00_y412.00"></a><strong>[RFC7858]</strong> Hu, Z., Zhu, L., Heidemann, J., Mankin, A., Wessels, D., and P. Hoffman, </p>
+<p>“Specification for DNS over Transport Layer Security (TLS)” , RFC 7858, DOI</p>
+<p>10.17487/RFC7858, May 2016, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc7858">https://www.rfc-editor.org/info/rfc7858&gt;. </a><a name="_page28_x66.00_y461.00"></a><strong>[RFC8174]</strong> Leiba, B., “Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words”, BCP</p>
+<p>14, RFC 8174, DOI 10.17487/RFC8174, May 2017, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8174">rfc8174&gt;</a>. </p>
+<p><a name="_page28_x66.00_y510.00"></a><strong>[RFC8310]</strong> Dickinson, S., Gillmor, D., and T. Reddy , “Usage Profiles for DNS over TLS and</p>
+<p>DNS over DTLS”, RFC 8310 , DOI 10.17487/RFC8310 , March 2018, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8310">https:// www.rfc-editor.org/info/rfc8310&gt;. </a></p>
+<p><a name="_page28_x66.00_y558.00"></a><strong>[RFC8446]</strong> Rescorla, E. , “The Transport Layer Security (TLS) Protocol Version 1.3” , RFC 8446 ,</p>
+<p>DOI 10.17487/RFC8446, August 2018, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8446">https://www.rfc-editor.org/info/rfc8446&gt;. </a><a name="_page28_x66.00_y594.00"></a><strong>[RFC8490]</strong> Bellis, R., Cheshire, S., Dickinson, J., Dickinson, S., Lemon, T., and T. Pusateri, </p>
+<p>“DNS Stateful Operations” , RFC 8490 , DOI 10.17487/RFC8490 , March 2019, </p>
+<p>&lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8490">https://www.rfc-editor.org/info/rfc8490&gt;. </a></p>
+<p><a name="_page28_x66.00_y642.00"></a><strong>[SRVTYPE]</strong> IANA, “Service Name and Transport Protocol Port Number Registry”, &lt;https://</p>
+<p><a target="_blank" rel="noopener" href="https://www.iana.org/assignments/service-names-port-numbers/">www.iana.org/assignments/service-names-port-numbers/&gt;. </a></p>
+<ol start="2">
+<li><a href="#_page29_x66.00_y70.00"><strong>Informative References</strong> </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></li>
+</ol>
+<p><a name="_page29_x66.00_y70.00"></a><a name="_page29_x66.00_y114.00"></a><strong>[BCP195]</strong> Sheffer, Y., Holz, R., and P. Saint-Andre , “Recommendations for Secure Use of</p>
+<p>Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)”, BCP 195, RFC 7525, May 2015, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/bcp195">https://www.rfc-editor.org/info/bcp195&gt;. </a></p>
+<p><a name="_page29_x66.00_y163.00"></a><strong>[OBS]</strong> Wikipedia , “Observer pattern”, February 2020, &lt;<a href="https://en.[wikipedia.org/w/](https://en.wikipedia.org/w/index.php?title=Observer_pattern&amp;oldid=939702131)">https://en.[wikipedia.org/w/](https://en.wikipedia.org/w/index.php?title=Observer_pattern&amp;oldid=939702131)</a></p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/w/index.php?title=Observer_pattern&oldid=939702131">index.php?title=Observer_pattern&amp;oldid=939702131&gt;. </a></p>
+<p><a name="_page29_x66.00_y198.00"></a><strong>[RFC2308]</strong> Andrews, M. , “Negative Caching of DNS Queries (DNS NCACHE)” , RFC 2308, DOI</p>
+<p>10.17487/RFC2308, March 1998, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc2308">https://www.rfc-editor.org/info/rfc2308&gt;. </a><a name="_page29_x66.00_y233.00"></a><strong>[RFC3123]</strong> Koch, P., “A DNS RR Type for Lists of Address Prefixes (APL RR)” , RFC 3123, DOI</p>
+<p>10.17487/RFC3123, June 2001, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc3123">https://www.rfc-editor.org/info/rfc3123&gt;. </a>                               <a name="_page29_x66.00_y268.00"></a><strong>[RFC4287]</strong> Nottingham, M., Ed. and R. Sayre, Ed. , “The Atom Syndication Format” , RFC 4287 ,</p>
+<p>DOI 10.17487/RFC4287, December 2005, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc4287">https://www.rfc-editor.org/info/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc4287">rfc4287&gt;</a>. </p>
+<p><a name="_page29_x66.00_y317.00"></a><strong>[RFC4953]</strong> Touch, J., “Defending TCP Against Spoofing Attacks” , RFC 4953 , DOI 10.17487/ RFC4953, July 2007, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc4953">https://www.rfc-editor.org/info/rfc4953&gt;. </a></p>
+<p><a name="_page29_x66.00_y352.00"></a><strong>[RFC6281]</strong> Cheshire, S., Zhu, Z., Wakikawa, R., and L. Zhang , “Understanding Apple’s Back to</p>
+<p>My Mac (BTMM) Service” , RFC 6281 , DOI 10.17487/RFC6281 , June 2011, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc6281">https:// www.rfc-editor.org/info/rfc6281&gt;. </a></p>
+<p><a name="_page29_x66.00_y401.00"></a><strong>[RFC6762]</strong> Cheshire, S. and M. Krochmal , “Multicast DNS” , RFC 6762 , DOI 10.17487/RFC6762 ,</p>
+<p>February 2013, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc6762">https://www.rfc-editor.org/info/rfc6762&gt;. </a></p>
+<p><a name="_page29_x66.00_y436.00"></a><strong>[RFC6763]</strong> Cheshire, S. and M. Krochmal , “DNS-Based Service Discovery” , RFC 6763, DOI</p>
+<p>10.17487/RFC6763, February 2013, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc6763">https://www.rfc-editor.org/info/rfc6763&gt;. </a><a name="_page29_x66.00_y472.00"></a><strong>[RFC6886]</strong> Cheshire, S. and M. Krochmal , “NAT Port Mapping Protocol (NAT-PMP)”, RFC</p>
+<p>6886, DOI 10.17487/RFC6886, April 2013, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc6886">https://www.rfc-editor.org/info/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc6886">rfc6886&gt;</a>. </p>
+<p><a name="_page29_x66.00_y520.00"></a><strong>[RFC6887]</strong> Wing, D., Ed., Cheshire, S., Boucadair, M., Penno, R., and P. Selkirk , “Port Control</p>
+<p>Protocol (PCP)” , RFC 6887 , DOI 10.17487/RFC6887 , April 2013, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc6887">https://www.rfc- editor.org/info/rfc6887&gt;. </a></p>
+<p><a name="_page29_x66.00_y569.00"></a><strong>[RFC7413]</strong> Cheng, Y., Chu, J., Radhakrishnan, S., and A. Jain , “TCP Fast Open” , RFC 7413, DOI</p>
+<p>10.17487/RFC7413, December 2014, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc7413">https://www.rfc-editor.org/info/rfc7413&gt;. </a><a name="_page29_x66.00_y604.00"></a><strong>[RFC8010]</strong> Sweet, M. and I. McDonald , “Internet Printing Protocol/1.1: Encoding and</p>
+<p>Transport” , STD 92 , RFC 8010 , DOI 10.17487/RFC8010 , January 2017, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8010">https://</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8010">www.rfc-editor.org/info/rfc8010&gt;. </a></p>
+<p><a name="_page29_x66.00_y653.00"></a><strong>[RFC8011]</strong> Sweet, M. and I. McDonald , “Internet Printing Protocol/1.1: Model and</p>
+<p>Semantics” , STD 92 , RFC 8011 , DOI 10.17487/RFC8011 , January 2017, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8011">https:// www.rfc-editor.org/info/rfc8011&gt;. </a></p>
+<p><a name="_page30_x66.00_y70.00"></a><strong>[RFC8499]</strong> Hoffman, P., Sullivan, A., and K. Fujiwara , “DNS Terminology” , BCP 219, RFC<img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></p>
+<p>8499, DOI 10.17487/RFC8499, January 2019, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8499">https://www.rfc-editor.org/info/ rfc8499&gt;</a>. </p>
+<p><a name="_page30_x66.00_y119.00"></a><strong>[RFC8684]</strong> Ford, A., Raiciu, C., Handley, M., Bonaventure, O., and C. Paasch , “TCP Extensions</p>
+<p>for Multipath Operation with Multiple Addresses” , RFC 8684 , DOI 10.17487/ RFC8684, March 2020, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8684">https://www.rfc-editor.org/info/rfc8684&gt;. </a></p>
+<p><a name="_page30_x66.00_y168.00"></a><strong>[RFC8764]</strong> Cheshire, S. and M. Krochmal , “Apple’s DNS Long-Lived Queries Protocol”, RFC</p>
+<p>8764, DOI 10.17487/RFC8764, June 2020, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8764">https://www.rfc-editor.org/info/ rfc8764&gt;</a>. </p>
+<p><a name="_page30_x66.00_y217.00"></a><strong>[RFC8766]</strong> Cheshire, S. , “Discovery Proxy for Multicast DNS-Based Service Discovery”, RFC</p>
+<p>8766, DOI 10.17487/RFC8766, June 2020, &lt;<a target="_blank" rel="noopener" href="https://www.rfc-editor.org/info/rfc8766">https://www.rfc-editor.org/info/ rfc8766&gt;</a>. </p>
+<p><a name="_page30_x66.00_y266.00"></a><strong>[SD-API]</strong> Apple Inc. , “dns_sd.h” , &lt; <a target="_blank" rel="noopener" href="https://opensource.apple.com/source/mDNSResponder/mDNSResponder-878.70.2/mDNSShared/dns_sd.h.auto.html">https://opensource.apple.com/source/mDNSResponder/</a></p>
+<p><a target="_blank" rel="noopener" href="https://opensource.apple.com/source/mDNSResponder/mDNSResponder-878.70.2/mDNSShared/dns_sd.h.auto.html">mDNSResponder-878.70.2/mDNSShared/dns_sd.h.auto.html&gt;. </a></p>
+<p><a name="_page30_x66.00_y301.00"></a><strong>[SYN]</strong> Eddy, W., “Defenses Against TCP SYN Flooding Attacks” , The Internet Protocol</p>
+<p>Journal , Cisco Systems , Volume 9 , Number 4 , December 2006, &lt;https:// <a target="_blank" rel="noopener" href="https://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_9-4/ipj_9-4.pdf">www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_9-4/ipj_9-4.pdf&gt;. </a></p>
+<p><a name="_page30_x66.00_y350.00"></a><strong>[TCPRACK]</strong> Cheng, Y., Cardwell, N., Dukkipati, N., and P. Jha , “RACK: a time-based fast loss detection algorithm for TCP” , Work in Progress , Internet-Draft, draft-ietf-tcpm- rack-08, 9 March 2020, &lt;<a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-ietf-tcpm-rack-08">https://tools.ietf.org/html/draft-ietf-tcpm-rack-08&gt;. </a></p>
+<p><a name="_page30_x66.00_y398.00"></a><strong>[XEP0060]</strong> Millard, P., Saint-Andre, P., and R. Meijer , “Publish-Subscribe” , XSF XEP 0060  , <a name="_page30_x66.00_y422.00"></a>October 2019, &lt;<a target="_blank" rel="noopener" href="https://xmpp.org/extensions/xep-0060.html">https://xmpp.org/extensions/xep-0060.html&gt;. </a></p>
+<p><a href="#_page30_x66.00_y422.00"><strong>Acknowledgments</strong> </a></p>
+<p>The authors would like to thank Kiren Sekar and Marc Krochmal for previous work completed in this field.</p>
+<p>This document has been improved due to comments from Ran Atkinson, Tim Chown , Sara Dickinson , Mark Delany , Ralph Droms , Jan Komissar , Eric Rescorla , Michael Richardson,  David Schinazi , Manju Shankar Rao , Robert Sparks , Markus Stenberg , Andrew Sullivan , Michael Sweet , Dave Thaler , Brian Trammell , Bernie Volz , Éric Vyncke , Christopher Wood , Liang Xia , and Soraia Zlatkovic . Ted Lemon provided clarifying text that was greatly appreciated.</p>
+<p><a href="#_page31_x66.00_y70.00"><strong>Authors’ Addresses</strong> </a><img src="Aspose.Words.41fc3583-4159-41ac-84e2-c9eb55e2ff99.002.png" alt="ref1"></p>
+<p><a name="_page31_x66.00_y70.00"></a><strong>Tom Pusateri</strong></p>
+<p>Unaffiliated</p>
+<p>Raleigh, NC 27608</p>
+<p>United States of America Phone: <a href="tel:+1%20919%20867%201330">+1 919 867 1330 </a>Email: <a href="mailto:&#112;&#117;&#x73;&#97;&#x74;&#101;&#114;&#105;&#64;&#98;&#97;&#x6e;&#103;&#106;&#46;&#99;&#111;&#109;">&#112;&#117;&#x73;&#97;&#x74;&#101;&#114;&#105;&#64;&#98;&#97;&#x6e;&#103;&#106;&#46;&#99;&#111;&#109;</a></p>
+<p><strong>Stuart Cheshire</strong></p>
+<p>Apple Inc.</p>
+<p>One Apple Park Way Cupertino , CA 95014 United States of America Phone: <a href="tel:+1%20(408)%20996-1010">+1 (408) 996-1010 </a>Email: <a href="mailto:&#x63;&#x68;&#101;&#x73;&#x68;&#105;&#114;&#101;&#x40;&#97;&#x70;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#x6d;">&#x63;&#x68;&#101;&#x73;&#x68;&#105;&#114;&#101;&#x40;&#97;&#x70;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#x6d;</a><br>Pusateri &amp; Cheshire Standards Track Page 34</p>
+
+    </div>
+
+    
+    
+    <div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/11/02/2023/%E5%A5%BD%E7%9A%84,%E4%BD%BF%E7%94%A8%20CouchDB%20%E7%8A%B6%E6%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E7%9A%84%E6%96%B9%E6%B3%95%E5%A6%82%E4%B8%8B1/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">jason</p>
+  <div class="site-description" itemprop="description">唯有读书最快乐</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>
