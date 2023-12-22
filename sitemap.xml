@@ -2,9 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.blocktalk.top/2023/12/21/2023/Tuesdays%20with%20Morrie_%20An%20Old%20Man,%20a%20Young%20-%20Mitch%20Albom/</loc>
+    
+    <lastmod>2023-12-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.blocktalk.top/2023/12/21/2023/Sweetbitter_1/</loc>
+    
+    <lastmod>2023-12-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.blocktalk.top/2023/12/11/2023/rfc8765/rfc8765/</loc>
     
-    <lastmod>2023-12-10</lastmod>
+    <lastmod>2023-12-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.blocktalk.top/2023/12/11/2023/rfc8799/</loc>
+    
+    <lastmod>2023-12-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.blocktalk.top/2023/12/11/2023/rfc8765_2/</loc>
+    
+    <lastmod>2023-12-11</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -265,7 +301,7 @@
 
   <url>
     <loc>http://blog.blocktalk.top/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -273,35 +309,35 @@
   
   <url>
     <loc>http://blog.blocktalk.top/tags/test/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.blocktalk.top/tags/%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.blocktalk.top/tags/%E9%98%85%E8%AF%BB-%E6%94%B6%E8%B4%A7/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.blocktalk.top/tags/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.blocktalk.top/tags/%E5%AE%B6%E5%BA%AD/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -310,28 +346,28 @@
   
   <url>
     <loc>http://blog.blocktalk.top/categories/about/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.blocktalk.top/categories/Diary/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.blocktalk.top/categories/book/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.blocktalk.top/categories/daily/</loc>
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
